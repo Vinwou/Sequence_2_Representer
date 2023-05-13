@@ -92,32 +92,36 @@
 %	MATHEMATICS EXAMPLES CHAPTER
 %----------------------------------------------------------------------------------------
 
-\chapter{Représentation normée des systèmes}
+\chapter{Allumer le feu}
 
-\section{Introduction}
-
-
-S’échanger des \textbf{informations} est essentiel pour construire le monde d’aujourd’hui. Les exigences que nous avons, vis-à-vis des \textbf{risques} (la musique d'un airpod de doit pas dépasser 100 dB), du \textbf{confort} (la température de la salle de classe ne doit pas être inférieure à 16$^{\circ}$), de l'\textbf{accessibilités} (l'espacement entre les allées doivent permettre le passage d'une chaise roulante) ou des \textbf{performances} (le véhicule doit avoir une puissance max de 100 chevaux) des systèmes que nous concevons doivent être comprise de toute.s. Cet objectif impose d’être rigoureux pour éviter les mésententes. Le temps et le coût étant pris en compte, nous voulons éviter les hors-sujets une fois le travail déjà terminé. Nous essayerons de traduire nos systèmes dans des langages ou des \textbf{schémas} compréhensible de l’industrie. Comme la grammaire en français nous impose des règles, la représentation des systèmes impose des \textbf{normes}, admises par la plupart du parc industriel mondial.\\
+\section{Les ingrédients pour usiner}
 
 
-Il existe trois types de normes :
-\begin{enumerate}
-    \item obligatoire / réglementaire ;
-    \item volontaire / certifiable ;
-    \item non certifiable.
-\end{enumerate}
+En BTS CPRP, nous nous intéresseront au machines ayant des outils qui sont commandés numériquement par un programme informatique. Quand on achète une MOCN, elle dispose déjà d'un programme interne. Nous devons cependant le modifier pour qu'il réponde à notre besoin. Comme en informatique, chaque programme à un but précis. Nous auront en principe un programme à entrer dans la machine par pièce que nous souhaitons usiner. Pour programmer, vous connaissez sûrement déjà certain langage de programmation : on peut citer le C++, HTML, CSS, Python, Arduino, etc. Cependant les programmes utilisés pour l'usinage sont assez spécifiques et changent moins que dans d'autres domaines\footnote{Les langages de programmation pour le code ou les sites internet évoluent sans cesse, pour un codeur informatique, le choix du langage est très large par rapport à notre domaine.}. À l'origine, le langage de programmation était le \textbf{G-code}\footnote{, Développé par l'EIA (Electronic Industries Alliance) au début des années 1960.}, et finalement remplacé par l'\textbf{ISO}\footnote{Remplacé en février 1980 sous la référence RS274D.} mais certain constructeur peuvent avoir d'autre langage propre à la marque du constructeur.
 
 
 \begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
 	\centering % Horizontally center the figure on the page
-	\includegraphics[width=0.7\textwidth]{Images/Logo1.JPG} % Include the figure image
-	\caption{Logo de différents organismes de normalisation.}
-	\label{logo} % Unique label used for referencing the figure in-text
+	\includegraphics[width=0.7\textwidth]{Images/iso.png} % Include the figure image
+	\caption{Chargement d'un programme dans une MOCN. Université des Sciences et de la Technologie d'Oran Mohamed-Boudiaf USTOMB}
+	\label{iso3} % Unique label used for referencing the figure in-text
 \end{figure}
 
+Les machines ne sont pas comme nous, sans aucune perception de leur environnements elles sont dans le noir. Et nous leur demandons d'usiner avec une grande précision. Si on veut la longueur d'une pièce de 20,001 mm mais que la pièce sortie mesure 20,002 : elle sera à jeter... Tout cela avec des vitesses très lente ou très rapide (0,001 m/min à 130 m/min). \\
 
 
-\section{Système de normalisation}
+
+Alors dans tout ça, de quoi avons-nous besoin ? \\
+\begin{itemize}
+    \item Un objet de départ dont on va enlever la matière : \textit{\textbf{Le brut de matière}} ;
+    \item Des éléments pour enlever la matière : \textit{\textbf{Les outils}} ;
+    \item De la force ! pour trancher, percer, tronçonner, fournit par : \textit{\textbf{Des moteurs}} ; 
+    \item Oui mais si j'essaye de couper une feuille de papier avec des ciseaux, sans la tenir dans l'autre main c'est difficile, il faut donc que le \textit{Brut} soit solidement "attaché" : La \textit{\textbf{MIP}} et le \textit{\textbf{MAP}}\footnote{La MIP (MIse en Position) et le MAP (MAintient en Position) seront abordés plus tard dans l'année dans différents cours, mais surtout en industrialisation.}  ;
+    \item  Pour faire la forme que l'on veut : \textit{\textbf{Une trajectoire}} ;
+\end{itemize}
+
+
+\section{Référentiels et repères}
 
 \begin{corollary}[S2.4] 
 Représentations graphiques dérivées des maquettes numériques \\
@@ -153,12 +157,7 @@ Notez qu'une entreprise se situant en France peut se certifier avec une norme Am
 \end{remark}
 
 
-\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
-	\centering % Horizontally center the figure on the page
-	\includegraphics[width=0.7\textwidth]{AFNOR.PNG} % Include the figure image
-	\caption{AFNOR Nomarlisation}
-	\label{AFNOR} % Unique label used for referencing the figure in-text
-\end{figure}
+
 
 
 
@@ -204,12 +203,6 @@ Les éléments de cette normes sont au coeur de la compréhension des dessins de
 \end{definition}
 
 
-\begin{figure}[h] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
-	\centering % Horizontally center the figure on the page
-	\includegraphics[width=1\textwidth]{Images/C1.png} % Include the figure image
-	\caption{Schéma de commande des axes MOCN.}
-	\label{logo_C1} % Unique label used for referencing the figure in-text
-\end{figure}
 
 
 \begin{definition}[L'axe $\overrightarrow{Z}$]\index{Axe Z}
