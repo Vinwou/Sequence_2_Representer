@@ -50,8 +50,7 @@
 \usepackage{pdfpages} %pour les pdf
 
 
-%\usepackage[utf8]{inputenc}
-%\usepackage[T1]{fontenc} 
+
 \usepackage[french]{babel} % Pour les quotes og fg 
 
 \usepackage[most]{tcolorbox}
@@ -439,6 +438,51 @@
 	{\contentslabel[\thecontentslabel]{1.25cm}\hspace{0.5cm}} % Formatting of numbered sections of this type
 	{} % Formatting of numberless sections of this type
 	{~{\normalfont\titlerule*[6pt]{.}}~\thecontentspage} % Formatting of the filler to the right of the heading and the page number
+
+
+
+%%%%%%%%%%%%% Pour inventer colorbox -----------------------------------------------------------
+%----------------------------------------------------------------------------------------------
+
+\definecolor{RougeC}{RGB}{255, 97, 97}
+
+
+\tcbset{mystyle/.style={
+  breakable,
+  enhanced,
+  outer arc=0pt,
+  arc=0pt,
+  colframe=RougeC,
+  colback=RougeC!20,
+  attach boxed title to top left,
+  boxed title style={
+    colback=RougeC,
+    outer arc=0pt,
+    arc=0pt,
+    },
+  title=Extrait~\thetcbcounter,
+  fonttitle=\sffamily
+  }
+}
+
+
+
+
+\newtcolorbox[auto counter,number within=section]{Extrait}[1][]{
+  mystyle,
+  title=Extrait BTS~\thetcbcounter,
+  }
+
+
+%-----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+ 
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY

@@ -128,12 +128,7 @@ Alors dans tout ça, de quoi avons-nous besoin ? \\
 Dans la suite nous allons nous intéresser au dernier point. \textit{Repérer les éléments dans l'espace.} 
 
 
-\section{Référentiels et repères}
-
-
-
-
-\section{Outil mathématique pour l'ingénieur}
+\section{Outil mathématique pour futur.s.es l'ingénieur : Vous}
 Un repère du plan tout triplé où O est un point du plan et est une base. On l'écrit comme suit : $\mathcal{R}(0, \Vec{x}, \Vec{y}, \Vec{z})$. La base, c'est le tableau Excel infini, où sont présents tous les vecteur (en deux ou trois dimensions), mais ils ne peuvent pas être égaux. Par exemple, $\Vec{a}=\ \begin{Bmatrix} 1\\ 3 \end{Bmatrix} $ et $\Vec{b}=\ \begin{Bmatrix} 1\\ 3 \end{Bmatrix}$  ne peuvent pas être élus au rang de $\mathcal{B}ase$ car ils sont égaux. En revanche, dans la bibliothèque infinie il y a les vecteurs $\Vec{i}=\ \begin{Bmatrix} -1\\ 3 \\ 0 \end{Bmatrix} $ et $\Vec{j}=\ \begin{Bmatrix} -1\\ 0 \\ 3\end{Bmatrix}$ qui peuvent être choisi pour une base. \\
 
 
@@ -160,16 +155,19 @@ l’espace par rapport à $\mathcal{O}$. On decide que $\mathcal{O}$ est notre o
 \begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
 	\centering % Horizontally center the figure on the page
 	\includegraphics[width=1.1\textwidth]{Images/vect2.png} % Include the figure image
-	\caption{Symbolisation d'un repère. Une fois une base (deux vecteurs) et une origine ($\mathcal{O}$) choisies, les deux vecteurs mis bout à bout forme un plan, et $\mathcal{O}$ nous sert à connaître n'importe quel point par rapprt à lui.}
+	\caption{Symbolisation d'un repère. Une fois une base (deux vecteurs) et une origine ($\mathcal{O}$) choisies, les deux vecteurs mis bout à bout forme un plan, et $\mathcal{O}$ nous sert à connaître n'importe quel point par rapport à lui.}
 	\label{vect2} % Unique label used for referencing the figure in-text
 \end{figure}
 
+Maintenant que nous avons vu le cas général, nous allons voir les cas que vous croiserez en pratique. Que ce soit en théorie ou en pratique, en contrôle ou à l'examen, il y a quelque situation à connaître pour ne pas être surpris.e.
+
+\section{Ortho-normé-direct}
 
 
-Un Référentiel , on ajoute $t$, le temps avec une unité (exemple : seconde), du labo, galiéen
 
 
 \section{Référentiel}
+Un Référentiel , on ajoute $t$, le temps avec une unité (exemple : seconde), du labo, galiéen
 
 \begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
 	\centering % Horizontally center the figure on the page
@@ -228,6 +226,64 @@ F_{z}
 
 \subsection{Torseurs}
 video science clic ?
+
+\begin{Extrait}\index{Torseurs (exercice)}
+TS CPRP 2015 \\
+On se propose d’estimer l’effort maxi que doit appliquer la contre-pointe sur le papillon lors de l’opération de perçage. \\
+
+
+
+\noindent \begin{minipage}{0.5\textwidth}
+\vspace{1cm}
+\includegraphics[width=1\textwidth]{Images/2015.JPG}
+\label{fig:nature}
+\end{minipage}
+\hspace{0.05\textwidth}
+\begin{minipage}{0.4\textwidth}
+Hypothèses : 
+\begin{itemize}
+\item Le problème possède un plan de
+symétrie mécanique ($\mathcal{B}, \Vec{y}, \Vec{z}$) ;
+\item L’ensemble des contacts entre
+solide se fait avec adhérence. On
+prendra $tan(\phi_{0}) = 0,1.$ ;
+\item L’étude est menée à la « limite du
+glissement »;
+\item L'action de la pesanteur est
+négligée ;
+\item Pour l’étude, l’effort de pénétration notée $\overrightarrow{\mathcal{A}_{(f\rightarrow p)}}\ $ aura une intensité de : \\ $ \Vert \overrightarrow{\mathcal{A}_{(f\rightarrow p)}} \Vert = 2000 N\ $
+\end{itemize}
+
+\end{minipage}
+
+
+On notera :
+$\displaystyle \begin{Bmatrix}
+A_{f\rightarrow p}
+\end{Bmatrix} =\begin{Bmatrix}
+\overrightarrow{A_{f\rightarrow p}} =2000.\vec{y} & \\
+\overrightarrow{\mathcal{M}_{A}{}_{\left( f\rightarrow p\right)}} =\vec{0} & 
+\end{Bmatrix}_{A,\ (\mathcal{R} ,\ \vec{x} ,\ \vec{y} ,\ \vec{z})}$
+
+Concernant l’action de posage, on considère que la liaison entre les supports à bille
+oscillante et le papillon est une liaison appui plan. En l’absence de mouvement, le
+torseur modélisant l’action mécanique transmissible comporte 3 inconnues Yc, Zc et Lc.
+Comme la liaison est unilatérale, ZC > 0.
+
+$\displaystyle \begin{Bmatrix}
+C_{pp\rightarrow papillon}
+\end{Bmatrix} =\begin{Bmatrix}
+0 & L_{c}\\
+Y_{c} & 0\\
+Z_{c} & 0
+\end{Bmatrix}_{C,\ (\mathcal{R} ,\ \vec{x} ,\ \vec{y} ,\ \vec{z})} avec\ Y_{c} =Z_{c} .\tan( \phi_{0})$
+
+
+\end{Extrait}
+
+
+
+
 \section{Position, vitesse et accélération}
 Mettre le sens physique
 \subsection{Vecteur trajectoire}
@@ -235,6 +291,19 @@ Mettre le sens physique
 \section{Forces}
 
 \section{Moments / Couples}
+
+\section{Notations}
+
+\begin{definition}\index{Solide indéformable}
+Un solide indéformable $\mathcal{S}$ est caractérisé par un ensemble de points, la distance entre deux points étant invariante au cours du temps. \\
+
+
+    $ \forall \ t,\forall A\ \in S,\ \forall B\ \in S\ :\ \Vert \overrightarrow{AB}\Vert =C^{cte} \ $ 
+
+
+\textit{On lit la ligne du dessus comme suit :} Quelque chose est un solide si, pour tout instant $t$, pour tous points $A$ d'un solide $\mathcal{S}$, pour tout point $B$ appartenant aussi à $\mathcal{S}$, la distance entre les points $A$ et $B$ reste constant au cours du temps.
+    
+\end{definition}
 
 
 \begin{corollary}[S2.4] 
@@ -252,6 +321,9 @@ aze
 \begin{remark}
     aze
 \end{remark}
+
+
+
 
 
 
