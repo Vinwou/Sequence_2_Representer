@@ -127,9 +127,14 @@ Alors dans tout ça, de quoi avons-nous besoin ? \\
 
 Dans la suite nous allons nous intéresser au dernier point. \textit{Repérer les éléments dans l'espace.} 
 
+Pour usiner, nous avons besoin de plusieurs informations à chaque instant $t$, la position de l'outil qui usine, sa vitesse, son accélération, sa trajectoire. Ces informations doivent être calculées puis programmées dans la machine. Nous allons voir dans ce chapitre comment construire l'information : repérer les objets dans les MOCN.
+
 
 \section{Outil mathématique pour futur.s.es l'ingénieur : Vous}
-Un repère du plan tout triplé où O est un point du plan et est une base. On l'écrit comme suit : $\mathcal{R}(0, \Vec{x}, \Vec{y}, \Vec{z})$. La base, c'est le tableau Excel infini, où sont présents tous les vecteur (en deux ou trois dimensions), mais ils ne peuvent pas être égaux. Par exemple, $\Vec{a}=\ \begin{Bmatrix} 1\\ 3 \end{Bmatrix} $ et $\Vec{b}=\ \begin{Bmatrix} 1\\ 3 \end{Bmatrix}$  ne peuvent pas être élus au rang de $\mathcal{B}ase$ car ils sont égaux. En revanche, dans la bibliothèque infinie il y a les vecteurs $\Vec{i}=\ \begin{Bmatrix} -1\\ 3 \\ 0 \end{Bmatrix} $ et $\Vec{j}=\ \begin{Bmatrix} -1\\ 0 \\ 3\end{Bmatrix}$ qui peuvent être choisi pour une base. \\
+
+Un \textit{repère} sera présent pour \textbf{toutes} les études, analyses, interrogations que vous verrez. On ne peut pas faire sans. Sinon on ne serait pas capable de décrire ce que l'on voit sous forme mathématique et donc impossible à programmer dans une machine. Un \textit{repère} est constitué de deux choses : Une $\mathcal{B}ase$ et une Origine. On l'écrit comme suit : $\mathcal{R}(0, \Vec{x}, \Vec{y}, \Vec{z})$.\\
+On lit la phrase suivante : Voici $\mathcal{R}$, un repère constitué d'une origine $O$ et d'une $\mathcal{B}ase$ de vecteurs $\Vec{x}$, $\Vec{y}$, $\Vec{z}$. \\
+La $\mathcal{B}ase$, c'est le tableau Excel infini, où sont présents tous les vecteur (en deux ou trois dimensions), mais ils ne peuvent pas être égaux. Par exemple, $\Vec{a}=\ \begin{Bmatrix} 1\\ 3 \end{Bmatrix} $ et $\Vec{b}=\ \begin{Bmatrix} 1\\ 3 \end{Bmatrix}$  ne peuvent pas être élus au rang de $\mathcal{B}ase$ car ils sont égaux. En revanche, dans la bibliothèque infinie il y a les vecteurs $\Vec{i}=\ \begin{Bmatrix} -1\\ 3 \\ 0 \end{Bmatrix} $ et $\Vec{j}=\ \begin{Bmatrix} -1\\ 0 \\ 3\end{Bmatrix}$ qui peuvent être choisi pour faire une base. \\
 
 
 
@@ -141,15 +146,11 @@ Un repère du plan tout triplé où O est un point du plan et est une base. On l
 \end{figure}
 
 
-Un repère R est la donnée d’un point d'origine $\mathcal{O}$ et d’une base $\mathcal{B}$, permettant de repérer tous points de
-l’espace par rapport à $\mathcal{O}$. On decide que $\mathcal{O}$ est notre origine, on choisi deux vecteurs dans notre bibliothèque (sauf s'il sont égaux), on prend l'origine des deux vecteurs et on le colle sur notre point $\mathcal{O}$. Voilà, le repère est fait. \\
+Un repère $\mathcal{R}$ est la donnée d’un point d'origine $\mathcal{O}$ et d’une base $\mathcal{B}$, permettant de repérer tous points de
+l’espace par rapport à $\mathcal{O}$ (l'origine du repère). On décide que $\mathcal{O}$ est notre origine, on choisi deux vecteurs dans notre bibliothèque (sauf s'il sont égaux), on prend l'origine des deux vecteurs et on le colle sur notre point $\mathcal{O}$. Voilà, le repère est fait. \\
 
 \begin{remark}
-    En pratique, nous n'avons pas besoin de dire si un vecteur ou un repère est en 2 ou 3 dimensions. Un vecteur en 2 dimensions possède 2 données $\Vec{i}=\ \begin{Bmatrix} a\\ b \end{Bmatrix} $, en trois dimension trois données : $\Vec{i}=\ \begin{Bmatrix} a\\ b \\ c \end{Bmatrix} $ \\
-
-    Un repère en deux dimensions s'écriera $\mathcal{R}(0, \Vec{x}, \Vec{y})$, tandis-qu'un repère à trois dimensions s'écriera $\mathcal{R}(0, \Vec{x}, \Vec{y}, \Vec{z})$.
-    
-    Attention, si on écrire 330 c'est bien que nous nous situons dans un système de trois coordonnées.
+    En pratique, nous n'avons pas besoin de dire si un vecteur ou un repère est en 2 ou 3 dimensions. Un vecteur en 2 dimensions possède 2 données $\Vec{i}=\ \begin{Bmatrix} a\\ b \end{Bmatrix} $, il en possédera trois, pour la dimension trois : $\Vec{i}=\ \begin{Bmatrix} a\\ b \\ c \end{Bmatrix} $. De même, un repère en deux dimensions s'écriera $\mathcal{R}(0, \Vec{x}, \Vec{y})$, tandis-qu'un repère à trois dimensions s'écriera $\mathcal{R}(0, \Vec{x}, \Vec{y}, \Vec{z})$.    
 \end{remark}
 
 \begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
@@ -163,8 +164,101 @@ Maintenant que nous avons vu le cas général, nous allons voir les cas que vous
 
 \section{Ortho-normé-direct}
 
+Cette expression, vous la verrez beaucoup. Nous avons vu comment construire un repère, mais ceux qui seront utilisés pour les exercices ou en examens seront pour la plupart du temps construit pour être le plus simple possible. Nous allons détailler les repères principaux, qui sont orthogonaux, normés et directs.
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=0.25\textwidth]{Images/tri.png} % Include the figure image
+    \includegraphics[width=0.2\textwidth]{Images/one.png} % Include the figure image
+    \includegraphics[width=0.2\textwidth]{Images/rot.png} % Include the figure image
+
+\end{figure}
 
 
+
+
+\subsection{Orthogonalité}
+Les vecteurs que nous prenons dans notre bibliothèque (la $\mathcal{B}ase$) ne seront en général pas pris au hasard. On s'arrangera avoir deux vecteurs simplement perpendiculaires. 
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=0.8\textwidth]{Images/ortho1.png} % Include the figure image
+	\label{ortho1} % Unique label used for referencing the figure in-text
+\end{figure}
+
+L'avantage est qu'une rotation d'un demi tour ($180^{\circ}$) sera égal à $\pi$ ce qui simplifie grandement les calculs.
+
+
+
+
+
+
+
+\subsection{Normé}
+
+Une autre simplification est la normalisation des vecteurs utilisés pour construire une base. 
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1\textwidth]{Images/norme2.png} % Include the figure image
+	\caption{Construction d'une base avec des vecteurs à norme unitaire.}
+	\label{norme2} % Unique label used for referencing the figure in-text
+\end{figure}
+
+La distance entre chaque trait d'un repère dit normé est de \textit{une} unité. L'aspect plus scientifique des \textit{vecteurs unitaires} sera détaillé dans le chapitre [\ref{Vecteurs}] dédié.
+
+\begin{theorem}
+    Un vecteur qui possède une norme de une unité est appelé \textbf{vecteur unitaire}. On écrit : $ \Vert \Vec{u} \Vert = 1\ $
+\end{theorem}
+
+
+
+\subsection{Direct}
+
+En choisissant un repère dit \textit{direct}, on choisira une fois pour toute, le sens \textbf{positif} de rotation entre les axes. En grande majorité, on prendra le sens \textbf{anti-horaire}, donc \textbf{trigonométrique}. Cela simplifiera les calculs, notamment pour toutes les formules de trigonométrie. De plus, il est important d'avoir un outil commun, par exemple pour décrire la rotation d'une vis dans son logement les calculs négatifs ou positifs peuvent décrire un vissage ou dévissage et une erreur de compréhension doit être évitée.
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=0.8\textwidth]{Images/direct1.png} % Include the figure image
+	\caption{Construction d'une base suivant le sens trigonométrique.}
+	\label{direct1} % Unique label used for referencing the figure in-text
+\end{figure}
+
+
+
+\begin{theorem}
+Au final, on aura donc un repère qui en général, se composera de deux vecteurs non égaux et unitaires, qui seront mis bout à bout et perpendiculaires. L'endroit de leur rencontre sera le point d'origine du repère. Et le sens sera positif quand on suivras le sens trigonométrique.
+\end{theorem}
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1\textwidth]{Images/repere2.png} % Include the figure image
+	\caption{Construction d'un repère pour dimension 1, 2 et 3.}
+	\label{repere2} % Unique label used for referencing the figure in-text
+\end{figure}
+
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1\textwidth]{Images/repere3.png} % Include the figure image
+	\caption{Schémas type de repères en fonction du sens direct.}
+	\label{repere3} % Unique label used for referencing the figure in-text
+\end{figure}
+
+
+Dans ses conditions on pourra utiliser les relations trigonométriques suivantes :
+
+\vspace{0.5cm}
+ 
+
+$\displaystyle \cos( \theta -\pi ) =\ -\cos( \theta )$ et $\displaystyle \sin( \theta +\pi ) =-\sin( \theta )$ \\
+
+$\displaystyle \cos( \pi -\theta ) =-\cos( \theta )$ et $\displaystyle \sin( \pi -\theta ) =\sin( \theta )$ \\
+
+$\displaystyle \cos( -\theta ) =\cos( \theta )$ et $\displaystyle \sin( -\theta ) =-\sin( \theta )$ \\
+
+$\displaystyle \cos\left(\frac{\pi }{2} -\theta \right) =\sin( \theta )$ et $\displaystyle \sin\left(\frac{\pi }{2} -\theta \right) =\cos( \theta )$ \\
+
+$\displaystyle \cos\left( \theta +\frac{\pi }{2}\right) =-\sin( \theta )$ et $\displaystyle \sin\left( \theta +\frac{\pi }{2}\right) =\cos( \theta )$ 
 
 \section{Référentiel}
 Un Référentiel , on ajoute $t$, le temps avec une unité (exemple : seconde), du labo, galiéen
@@ -212,7 +306,8 @@ Un Référentiel , on ajoute $t$, le temps avec une unité (exemple : seconde), 
 Pas parler de physique, rester math . un peu de math, vecteur exprime globalement tout avec une fleche ou un type de fleche (double fleche pour les moments)
 \subsection{Notations}
 vecteur (F ou M ou T ou V ou $\Vec{a}$ ou P), torseurs
-\subsection{Vecteurs}
+\subsection{Vecteurs}\label{Vecteurs}
+
 On écrivait comme ça,  $\Vec{i}=\ \begin{Bmatrix} a\\ b \\ c \end{Bmatrix} $  maintenant faut écrire comme ça 
  {$\mathcal{F}_{moteur} =\ \begin{Bmatrix}
 F_{x}\\
