@@ -130,7 +130,7 @@ Dans la suite nous allons nous intéresser au dernier point. \textit{Repérer le
 Pour usiner, nous avons besoin de plusieurs informations à chaque instant $t$, la position de l'outil qui usine, sa vitesse, son accélération, sa trajectoire. Ces informations doivent être calculées puis programmées dans la machine. Nous allons voir dans ce chapitre comment construire l'information : repérer les objets dans les MOCN.
 
 
-\section{Outil mathématique pour futur.s.es l'ingénieur : Vous}
+\section{Outil mathématique pour futur.e.s ingénieur : Vous}
 
 Un \textit{repère} sera présent pour \textbf{toutes} les études, analyses, interrogations que vous verrez. On ne peut pas faire sans. Sinon on ne serait pas capable de décrire ce que l'on voit sous forme mathématique et donc impossible à programmer dans une machine. Un \textit{repère} est constitué de deux choses : Une $\mathcal{B}ase$ et une Origine. On l'écrit comme suit : $\mathcal{R}(0, \Vec{x}, \Vec{y}, \Vec{z})$.\\
 On lit la phrase suivante : Voici $\mathcal{R}$, un repère constitué d'une origine $O$ et d'une $\mathcal{B}ase$ de vecteurs $\Vec{x}$, $\Vec{y}$, $\Vec{z}$. \\
@@ -186,7 +186,7 @@ Les vecteurs que nous prenons dans notre bibliothèque (la $\mathcal{B}ase$) ne 
 	\label{ortho1} % Unique label used for referencing the figure in-text
 \end{figure}
 
-L'avantage est qu'une rotation d'un demi tour ($180^{\circ}$) sera égal à $\pi$ ce qui simplifie grandement les calculs.
+En sciences de l'ingénieur, on utilisera davantage certaines unités plutôt que d'autres. Notamment pour les rotations, les radians plutôt que les degrés. Une rotation d'un demi tour ($180^{\circ}$) sera égal à $\pi$ ce qui simplifiera grandement les calculs.
 
 
 
@@ -206,9 +206,10 @@ Une autre simplification est la normalisation des vecteurs utilisés pour constr
 
 La distance entre chaque trait d'un repère dit normé est de \textit{une} unité. L'aspect plus scientifique des \textit{vecteurs unitaires} sera détaillé dans le chapitre [\ref{Vecteurs}] dédié.
 
-\begin{theorem}
-    Un vecteur qui possède une norme de une unité est appelé \textbf{vecteur unitaire}. On écrit : $ \Vert \Vec{u} \Vert = 1\ $
-\end{theorem}
+\begin{definition}\index{Vecteur unitaire}
+Un vecteur qui possède une norme de une unité est appelé \textbf{vecteur unitaire}. En mathématique, la norme de quelque chose s'écrit $ \Vert quelque chose \Vert $ On écrira donc : $ \Vert \Vec{u} \Vert = 1\ $
+\end{definition}
+
 
 
 
@@ -226,7 +227,7 @@ En choisissant un repère dit \textit{direct}, on choisira une fois pour toute, 
 
 
 \begin{theorem}
-Au final, on aura donc un repère qui en général, se composera de deux vecteurs non égaux et unitaires, qui seront mis bout à bout et perpendiculaires. L'endroit de leur rencontre sera le point d'origine du repère. Et le sens sera positif quand on suivras le sens trigonométrique.
+Au final, on aura donc un repère qui en général, se composera de deux vecteurs non égaux et unitaires, qui seront mis bout à bout et perpendiculaires. L'endroit de leur rencontre sera le point d'origine du repère. Et le sens sera positif quand on suivra le sens trigonométrique.
 \end{theorem}
 
 \begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
@@ -262,23 +263,52 @@ $\displaystyle \cos\left(\frac{\pi }{2} -\theta \right) =\sin( \theta )$ et $\di
 $\displaystyle \cos\left( \theta +\frac{\pi }{2}\right) =-\sin( \theta )$ et $\displaystyle \sin\left( \theta +\frac{\pi }{2}\right) =\cos( \theta )$ 
 
 \section{Référentiel}
-Un Référentiel , on ajoute $t$, le temps avec une unité (exemple : seconde), du labo, galiéen.
-\section{Coordonnées}
+
+\begin{definition}\index{Référentiel}
+Un Référentiel est l'association d'un repère auquel on ajoute on ajoute le temps $t$ (avec la seconde comme unité par exemple).
+\end{definition}
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=0.5\textwidth]{Images/ref1.png} % Include the figure image
+	\caption{Définition d'un référentiel}
+	\label{ref1} % Unique label used for referencing the figure in-text
+\end{figure}
+
+Pour nous permettre d'étudier les phénomènes physiques, on prendra l'habitude de s'imaginer dans un référentiel. On peut ressentir l'effet des référentiels différents dans le métro ou le RER. Il arrive de ne pas savoir si c'est notre wagon qui est entrain de partir, ou si c'est celui d'en face. Parce qu'on ne nous dit pas ce qui est fixe par rapport à nous, et ce qui est mobile. En effet, tout ce que nous connaissons est en perpétuel mouvement et peut influencer toutes les observations. Notre planète tourne sur elle-même et se déplace autour du Soleil, qui est lui-même en mouvement à 850 000 $km/h$ dans une galaxie qui se déplace à plus de $631\pm 20 km/s$ attirée par la lointaine concentration de masse Shapley\footnote{Article scientifique : The dipole repeller, Yehuda Hoffman, Daniel Pomarède, R. Brent Tully \& Hélène M. Courtois. https://www.nature.com/}.
+
+Pour pouvoir représenter et étudier un mouvement il faut admettre que son cadre d'observation est fixe pour ne pas qu'il influe sur le phénomène à étudier. C'est pour cela que l'on utilise un référentiel. Il existe plein de référentiel, mais nos études se limiterons en général à des objets très petits ou des vitesses négligeables par rapport à celle de la lumière. Ce qu'il faut retenir c'est surtout le fait qu'un référentiel c'est l'ajout supplémentaire d'une coordonnées de temps. On a donc au final 2 ou 3 coordonnées de position et une coordonnées de temps. Attention, la coordonnées de temps fait souvent partie des coordonnées utilisées sur le repère. Par exemple, si on ne regarde que la hauteur d'une pomme qui est entrain de tomber, on aura une coordonnées de hauteur (représenter par un vecteur unitaire de notre bibliothèque) et une coordonnées de temps (représenter par un autre vecteur unitaire de notre bibliothèque). On a seulement deux coordonnées pour l'analyse voulue.
+
 
 
 \begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
 	\centering % Horizontally center the figure on the page
-	\includegraphics[width=1\textwidth]{Images/cart.JPG} % Include the figure image
+	\includegraphics[width=1\textwidth]{Images/ref2.png} % Include the figure image
+	\caption{Référentiel disposant de deux coordonnées, la hauteur et le temps.}
+	\label{ref2} % Unique label used for referencing the figure in-text
+\end{figure}
+
+Sur la figure [\ref{ref2}] on peut par exemple dire que la hauteur doit être en mètre et le temps en seconde. 
+
+\section{Coordonnées}
+A ce stade, nous avons un espace qui n'attend plus d'avoir des éléments à l'intérieur. Avec le repère orthonormé direct qu'on utilise, nous pouvons maintenant repérer des points, décrire le mouvement des vents, voir la force engendrée par un barrage ou la trajectoire d'un outil dans une MOCN. Mais encore une fois, on ne peut pas démarrer directement, il y a en effet différents \textit{systèmes} de coordonnées. Comme on choisi son mode de transport en fonction de notre destination, le système de coordonnée sera choisi en fonction de ce qu'il faudra traiter.
+
+\subsection{Coordonnées cartésiennes}
+\subsection{Coordonnées polaires}
+\subsection{Coordonnées cylindriques}
+\subsection{Coordonnées sphériques}
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=0.7\textwidth]{Images/cart.JPG} % Include the figure image
 	\caption{Logo de la certification QSE}
 	\label{cart} % Unique label used for referencing the figure in-text
 \end{figure}
 
 
-
-
 \begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
 	\centering % Horizontally center the figure on the page
-	\includegraphics[width=1\textwidth]{Images/pol.JPG} % Include the figure image
+	\includegraphics[width=0.7\textwidth]{Images/pol.JPG} % Include the figure image
 	\caption{Le système de cordonnées (X, Y, Z) est un système cartésien de sens direct lié à une pièce placée sur la machine. Exemple : Sur une MOCN, on peut mettre manuellement en rotation la broche dans le sens direct en appuyant sur le bouton \textbf{C+} du pupitre de commande.}
 	\label{pol4} % Unique label used for referencing the figure in-text
 \end{figure}
@@ -393,15 +423,15 @@ Mettre le sens physique
 \section{Notations}
 
 \begin{definition}\index{Solide indéformable}
-Un solide indéformable $\mathcal{S}$ est caractérisé par un ensemble de points, la distance entre deux points étant invariante au cours du temps. \\
+Un solide $\mathcal{S}$ est appelé indéformable s'il est caractérisé par un ensemble de points et que la distance entre deux points reste invariante au cours du temps. Mathématiquement, on écrit :
 
 
     $ \forall \ t,\forall A\ \in S,\ \forall B\ \in S\ :\ \Vert \overrightarrow{AB}\Vert =C^{cte} \ $ 
 
 
 \textit{On lit la ligne du dessus comme suit :} Quelque chose est un solide si, pour tout instant $t$, pour tous points $A$ d'un solide $\mathcal{S}$, pour tout point $B$ appartenant aussi à $\mathcal{S}$, la distance entre les points $A$ et $B$ reste constant au cours du temps.
-    
 \end{definition}
+
 
 
 \begin{corollary}[S2.4] 
