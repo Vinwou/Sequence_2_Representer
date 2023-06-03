@@ -109,7 +109,7 @@ En BTS CPRP, nous nous intéresseront au machines ayant des outils qui sont comm
 
 
 
-Les machines ne sont pas comme nous, sans aucune perception de leur environnements elles sont dans le noir. Et nous leur demandons d'usiner avec une grande précision. Si on veut la longueur maximum d'une pièce de 20,001 mm mais que la pièce sortie mesure 20,002 : elle sera à jeter... Tout cela avec des vitesses très lente ou très rapide (0,001 m/min à 130 m/min). \\
+Les machines ne sont pas comme nous, sans aucune perception de leur environnement elles sont dans le noir. Et nous leur demandons d'usiner avec une grande précision. Si on veut la longueur maximum d'une pièce de 20,001 mm mais que la pièce sortie mesure 20,002 : elle sera à jeter... Tout cela avec des vitesses très lente ou très rapide (0,001 m/min à 130 m/min). \\
 
 
 
@@ -119,7 +119,7 @@ Alors dans tout ça, de quoi avons-nous besoin ? \\
 \begin{itemize}
     \item Un objet de départ dont on va enlever la matière : \textit{\textbf{Le brut de matière}} ;
     \item Des éléments pour enlever la matière : \textit{\textbf{Les outils}} ;
-    \item De la force ! pour trancher, percer, tronçonner, fournit par : \textit{\textbf{Des moteurs}} ; 
+    \item De la force ! pour trancher, percer, tronçonner, fournie par : \textit{\textbf{Des moteurs}} ; 
     \item Oui mais si j'essaye de couper une feuille de papier avec des ciseaux, sans la tenir dans l'autre main c'est difficile, il faut donc que le \textit{Brut} soit solidement "attaché" : La \textit{\textbf{MIP}} et le \textit{\textbf{MAP}}\footnote{La MIP (MIse en Position) et le MAP (MAintient en Position) seront abordés plus tard dans l'année dans différents cours, mais surtout en industrialisation.}  ;
     \item  Pour faire la forme que l'on veut : \textit{\textbf{Une trajectoire}} ;
 \end{itemize}
@@ -132,7 +132,7 @@ Pour usiner, nous avons besoin de plusieurs informations à chaque instant $t$, 
 
 \section{Outil mathématique pour futur.e.s ingénieur : Vous}
 
-Un \textit{repère} sera présent pour \textbf{toutes} les études, analyses, interrogations que vous verrez. On ne peut pas faire sans. Sinon on ne serait pas capable de décrire ce que l'on voit sous forme mathématique et donc impossible à programmer dans une machine. Un \textit{repère} est constitué de deux choses : Une $\mathcal{B}ase$ et une Origine. On l'écrit comme suit : $\mathcal{R}(0, \Vec{x}, \Vec{y}, \Vec{z})$.\\
+Un \textit{repère} sera présent pour \textbf{toutes} les études, analyses, interrogations que vous verrez. On ne peut pas faire sans. Sinon on ne serait pas capable de décrire ce que l'on voit sous forme mathématique et donc, impossible de programmer les machine. Un \textit{repère} est constitué de deux choses : Une $\mathcal{B}ase$ et une Origine. On l'écrit comme suit : $\mathcal{R}(0, \Vec{x}, \Vec{y}, \Vec{z})$.\\
 On lit la phrase suivante : Voici $\mathcal{R}$, un repère constitué d'une origine $O$ et d'une $\mathcal{B}ase$ de vecteurs $\Vec{x}$, $\Vec{y}$, $\Vec{z}$. \\
 La $\mathcal{B}ase$, c'est le tableau Excel infini, où sont présents tous les vecteur (en deux ou trois dimensions), mais ils ne peuvent pas être égaux. Par exemple, $\Vec{a}=\ \begin{Bmatrix} 1\\ 3 \end{Bmatrix} $ et $\Vec{b}=\ \begin{Bmatrix} 1\\ 3 \end{Bmatrix}$  ne peuvent pas être élus au rang de $\mathcal{B}ase$ car ils sont égaux. En revanche, dans la bibliothèque infinie il y a les vecteurs $\Vec{i}=\ \begin{Bmatrix} -1\\ 3 \\ 0 \end{Bmatrix} $ et $\Vec{j}=\ \begin{Bmatrix} -1\\ 0 \\ 3\end{Bmatrix}$ qui peuvent être choisi pour faire une base. \\
 
@@ -277,7 +277,7 @@ Un Référentiel est l'association d'un repère auquel on ajoute on ajoute le te
 
 Pour nous permettre d'étudier les phénomènes physiques, on prendra l'habitude de s'imaginer dans un référentiel. On peut ressentir l'effet des référentiels différents dans le métro ou le RER. Il arrive de ne pas savoir si c'est notre wagon qui est entrain de partir, ou si c'est celui d'en face. Parce qu'on ne nous dit pas ce qui est fixe par rapport à nous, et ce qui est mobile. En effet, tout ce que nous connaissons est en perpétuel mouvement et peut influencer toutes les observations. Notre planète tourne sur elle-même et se déplace autour du Soleil, qui est lui-même en mouvement à 850 000 $km/h$ dans une galaxie qui se déplace à plus de $631\pm 20 km/s$ attirée par la lointaine concentration de masse Shapley\footnote{Article scientifique : The dipole repeller, Yehuda Hoffman, Daniel Pomarède, R. Brent Tully \& Hélène M. Courtois. https://www.nature.com/}.
 
-Pour pouvoir représenter et étudier un mouvement il faut admettre que son cadre d'observation est fixe pour ne pas qu'il influe sur le phénomène à étudier. C'est pour cela que l'on utilise un référentiel. Il existe plein de référentiel, mais nos études se limiterons en général à des objets très petits ou des vitesses négligeables par rapport à celle de la lumière. Ce qu'il faut retenir c'est surtout le fait qu'un référentiel c'est l'ajout supplémentaire d'une coordonnées de temps. On a donc au final 2 ou 3 coordonnées de position et une coordonnées de temps. Attention, la coordonnées de temps fait souvent partie des coordonnées utilisées sur le repère. Par exemple, si on ne regarde que la hauteur d'une pomme qui est entrain de tomber, on aura une coordonnées de hauteur (représenter par un vecteur unitaire de notre bibliothèque) et une coordonnées de temps (représenter par un autre vecteur unitaire de notre bibliothèque). On a seulement deux coordonnées pour l'analyse voulue.
+Pour pouvoir représenter et étudier un mouvement il faut admettre que son cadre d'observation est fixe pour ne pas qu'il influe sur le phénomène à étudier. C'est pour cela que l'on utilise un référentiel. Il existe plein de référentiel, mais nos études se limiterons en général à des objets très petits ou des vitesses négligeables par rapport à celle de la lumière. Ce qu'il faut retenir c'est surtout le fait qu'un référentiel c'est l'ajout supplémentaire d'une coordonnées de temps. On a donc au final 2 ou 3 coordonnées de position et une coordonnées de temps. Attention, la coordonnées de temps fait souvent partie des coordonnées utilisées sur le repère. Par exemple, si on regarde la hauteur et la distance d'une pomme qui est entrain de tomber, on aura deux coordonnées de position (qui elles même dépendent du temps) et une coordonnées de temps. On a seulement deux coordonnées pour l'analyse voulue mais le temps est toujours là.
 
 
 
@@ -294,16 +294,152 @@ Sur la figure [\ref{ref2}] on peut par exemple dire que la hauteur doit être en
 A ce stade, nous avons un espace qui n'attend plus d'avoir des éléments à l'intérieur. Avec le repère orthonormé direct qu'on utilise, nous pouvons maintenant repérer des points, décrire le mouvement des vents, voir la force engendrée par un barrage ou la trajectoire d'un outil dans une MOCN. Mais encore une fois, on ne peut pas démarrer directement, il y a en effet différents \textit{systèmes} de coordonnées. Comme on choisi son mode de transport en fonction de notre destination, le système de coordonnée sera choisi en fonction de ce qu'il faudra traiter.
 
 \subsection{Coordonnées cartésiennes}
-\subsection{Coordonnées polaires}
-\subsection{Coordonnées cylindriques}
-\subsection{Coordonnées sphériques}
+Ce système de coordonnées est le plus rependus, il est facile à visualiser et vous l'utilisez énormément. Le repère que l'on prend nous donne un espace où des points pourront être posé et repéré par rapport à l'origine et aux axes.
+
+Nous partons d'un repère $\mathcal{R}$ muni d'une $\mathcal{B}ase(\Vec{x}, \Vec{y}, \Vec{z})$ : $\mathcal{R}(O, \Vec{x}, \Vec{y}, \Vec{z}$).
+
+On repère simplement les points du système de coordonnées cartésien par leur coordonnées selon chaque axes. Si on se place en 3 dimensions, un point aura donc trois données.
 
 \begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
 	\centering % Horizontally center the figure on the page
-	\includegraphics[width=0.7\textwidth]{Images/cart.JPG} % Include the figure image
-	\caption{Logo de la certification QSE}
-	\label{cart} % Unique label used for referencing the figure in-text
+	\includegraphics[width=1\textwidth]{Images/cart0.png} % Include the figure image
+	\caption{Coordonnées cartésiennes : Repérage d'un point P.}
+	\label{cart0} % Unique label used for referencing the figure in-text
 \end{figure}
+
+La figure [\ref{cart0}] prendre l'exemple d'un point P avec des valeurs algébriques, dans le cas général on peut noter la distance $\Vec{OP}$ comme suit : $\Vec{OP}=x\Vec{x}+y\Vec{y}+z\Vec{z}$ avec x, y et z n'importe quelle valeur.
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=0.3\textwidth]{Images/cart1.png} % Include the figure image
+	\caption{Coordonnées cartésiennes : cas général.}
+	\label{cart1} % Unique label used for referencing the figure in-text
+\end{figure}
+
+Concrètement, c'est un système de coordonnées que vous manipulerez pour des études sur fraiseuses ou centres d'usinage car il s'y prête très bien.
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=0.8\textwidth]{Images/cart2.png} % Include the figure image
+	\caption{Utilisation des coordonnées cartésiennes pour une fraiseuse.}
+	\label{cart2} % Unique label used for referencing the figure in-text
+\end{figure}
+
+Programmation d'une fraiseuse en coordonnées cartésiennes :
+
+
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1\textwidth]{Images/cart3.png} % Include the figure image
+	\caption{Calcul des coordonnées cartésiennes à programmer pour une fraiseuse.}
+	\label{cart3} % Unique label used for referencing the figure in-text
+\end{figure}
+
+
+\subsection{Coordonnées polaires}
+Imaginez que vous deviez décrire la trajectoire,  vitesse ou accélération des aiguilles d'une montre. Cela devient vite difficile car si on prend un système de coordonnées cartésien, chaque seconde, quand l'une des aiguilles avance, ce sont deux coordonnées qui doivent être changées. 
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1\textwidth]{Images/pol1.png} % Include the figure image
+	\caption{Différence entre coordonnées cartésiennes et polaires.}
+	\label{pol1} % Unique label used for referencing the figure in-text
+\end{figure}
+
+Sur la figure [\ref{pol1}], en coordonnées cartésiennes, le bout de l'aiguille en $t_1$ a pour coordonnées ($x_1; y_1$) et pour $t_2$ ($x_2 ; y_2$) : les \textbf{deux} valeurs changent. 
+En coordonnées polaires, le bout de l'aiguille en $t_1$ a pour coordonnées ($r ; \theta_1$) et pour $t_2$ ($r ; \theta_2 $) : \textbf{Une} seule valeur est changée.
+
+Pour le cas général, les coordonnées polaires se représente comme sur la figure [\ref{pol2}]
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1\textwidth]{Images/pol2.png} % Include the figure image
+	\caption{Coordonnées polaires.}
+	\label{pol2} % Unique label used for referencing the figure in-text
+\end{figure}
+\begin{Exercice}
+    D'après la figure [\ref{pol2}] essayez d'exprimer $r$ en fonction de $x$ et $y$. Pensez aux formules trigonométriques.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,142); %set diagram left start at 0, and has height of 142
+
+%Straight Lines [id:da8668537732864932] 
+\draw [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,draw opacity=1 ]   (109.38,48.29) -- (19,48.29) ;
+%Straight Lines [id:da04240430164333486] 
+\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (109.38,48.29) -- (18.71,120.96) ;
+%Straight Lines [id:da4411439485257207] 
+\draw    (18.71,120.96) -- (157.04,120.96) ;
+\draw [shift={(160.04,120.96)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Shape: Arc [id:dp8727987582575247] 
+\draw  [draw opacity=0][fill={rgb, 255:red, 74; green, 144; blue, 226 }  ,fill opacity=0.81 ] (42.42,102.58) .. controls (46.36,107.66) and (48.71,114.03) .. (48.71,120.96) .. controls (48.71,121.18) and (48.71,121.41) .. (48.7,121.63) -- (18.71,120.96) -- cycle ; \draw   (42.42,102.58) .. controls (46.36,107.66) and (48.71,114.03) .. (48.71,120.96) .. controls (48.71,121.18) and (48.71,121.41) .. (48.7,121.63) ;  
+%Shape: Circle [id:dp36815487674584846] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (16.21,120.96) .. controls (16.21,119.58) and (17.33,118.46) .. (18.71,118.46) .. controls (20.09,118.46) and (21.21,119.58) .. (21.21,120.96) .. controls (21.21,122.34) and (20.09,123.46) .. (18.71,123.46) .. controls (17.33,123.46) and (16.21,122.34) .. (16.21,120.96) -- cycle ;
+%Straight Lines [id:da546920544152073] 
+\draw    (18.71,120.96) -- (18.71,8.72) ;
+\draw [shift={(18.71,5.72)}, rotate = 90] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da9819027378108172] 
+\draw [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,draw opacity=1 ]   (109.38,48.29) -- (109.38,120.43) ;
+%Shape: Circle [id:dp33757938500758367] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (106.88,48.29) .. controls (106.88,46.91) and (107.99,45.79) .. (109.38,45.79) .. controls (110.76,45.79) and (111.88,46.91) .. (111.88,48.29) .. controls (111.88,49.67) and (110.76,50.79) .. (109.38,50.79) .. controls (107.99,50.79) and (106.88,49.67) .. (106.88,48.29) -- cycle ;
+
+% Text Node
+\draw (2.38,123.62) node [anchor=north west][inner sep=0.75pt]   [align=left] {O};
+% Text Node
+\draw (117.71,28.29) node [anchor=north west][inner sep=0.75pt]   [align=left] {P};
+% Text Node
+\draw (168.38,109.69) node [anchor=north west][inner sep=0.75pt]    {$\vec{x}$};
+% Text Node
+\draw (59.04,65.13) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ] [align=left] {$\displaystyle r$};
+% Text Node
+\draw (48.38,100.63) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,opacity=1 ] [align=left] {$\displaystyle \theta $};
+% Text Node
+\draw (2.38,4.69) node [anchor=north west][inner sep=0.75pt]    {$\vec{y}$};
+% Text Node
+\draw (61.38,120.19) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,opacity=1 ]  {$x$};
+% Text Node
+\draw (4.88,65.69) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,opacity=1 ]  {$y$};
+% Text Node
+\draw (202.96,12.13) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ] [align=left] {$\displaystyle r=$};
+% Text Node
+\draw (201.96,60.9) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,opacity=1 ]  {$x=$};
+% Text Node
+\draw (201.96,112.69) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,opacity=1 ]  {$y=$};
+% Text Node
+\draw (400.21,4.79) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle \overrightarrow{OP} =$};
+
+
+\end{tikzpicture}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    
+\end{Exercice}
+
+
+
+
+
+\subsection{Coordonnées cylindriques}
+
+Les coordonnées cylindriques sont une extension des coordonnées polaires. On fait une succession d'une infinité de plans des coordonnées polaires pour remplir un cylindre. Comme pour les coordonnées polaires, les coordonnées cylindriques sont souvent utilisées lorsque le problème traité présente une symétrie de révolution autour d’un axe, avec lequel sera confondu l’un des vecteurs de la base. Pour étudier les mouvements sur un tour, c'est le système de coordonnées idéal.
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1\textwidth]{Images/cyl1.png} % Include the figure image
+	\caption{Changement des coordonnées polaires en cylindriques.}
+	\label{cyl1} % Unique label used for referencing the figure in-text
+\end{figure}
+
+On cherche à connaître la distance $\Vec{OP}$ en coordonnées cylindriques. Par rapport au coordonnées polaires, il y a toujours $r$, et maintenant il faut ajouter la "hauteur" sur l'axe $\Vec{z}$. Ici, $r$ nous donne le rayon, donc la distance qui sépare le point que l'on étudie de l'axe de révolution, et la "longueur de hauteur". Avec cela, on peut déjà tracer des trajectoires parcourant un \textbf{brut de matière} et coder le tout dans une MOCN !
+
+
+\subsection{Coordonnées sphériques}
+Ne seront pas traitée
+
 
 
 \begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
@@ -408,6 +544,10 @@ Z_{c} & 0
 
 
 \end{Extrait}
+
+\begin{Exercice}
+    dsfg
+\end{Exercice}
 
 
 

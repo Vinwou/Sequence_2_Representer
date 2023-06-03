@@ -482,6 +482,57 @@
 
 
 
+
+
+
+
+%%%%%%%%%%%%% Pour inventer colorbox BLEU POUR EXERCICE -----------------------------------------------------------
+%----------------------------------------------------------------------------------------------
+
+\definecolor{BleuB}{RGB}{119, 181, 254}
+
+
+\tcbset{mystyle2/.style={
+  breakable,
+  enhanced,
+  outer arc=0pt,
+  arc=0pt,
+  colframe=BleuB,
+  colback=BleuB!20,
+  attach boxed title to top right,
+  boxed title style={
+    colback=BleuB,
+    outer arc=0pt,
+    arc=0pt,
+    },
+  title=Exercice~\thetcbcounter,
+  fonttitle=\sffamily
+  }
+}
+
+
+
+
+\newtcolorbox[auto counter,number within=section]{Exercice}[1][]{
+  mystyle2,
+  title=Exercice~\thetcbcounter,
+  }
+
+
+%-----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
  
 
 %----------------------------------------------------------------------------------------
