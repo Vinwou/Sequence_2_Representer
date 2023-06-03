@@ -284,7 +284,7 @@ Pour pouvoir représenter et étudier un mouvement il faut admettre que son cadr
 \begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
 	\centering % Horizontally center the figure on the page
 	\includegraphics[width=1\textwidth]{Images/ref2.png} % Include the figure image
-	\caption{Référentiel disposant de deux coordonnées, la hauteur et le temps.}
+	\caption{Référentiel disposant de deux coordonnées, la hauteur $h(t)$ suivant $\Vec{j}$ et la distance $d(t)$ suivant $\Vec{i}$.}
 	\label{ref2} % Unique label used for referencing the figure in-text
 \end{figure}
 
@@ -318,6 +318,10 @@ La figure [\ref{cart0}] prendre l'exemple d'un point P avec des valeurs algébri
 
 Concrètement, c'est un système de coordonnées que vous manipulerez pour des études sur fraiseuses ou centres d'usinage car il s'y prête très bien.
 
+\begin{remark}
+    Attention, il est facile d'être pertubé.e sur certaines notations. Quand on écrit $\Vec{OP}=x\Vec{x}+y\Vec{y}+z\Vec{z}$ il faut bien faire la différence entre les vecteurs unitaires ($\Vec{x}, \Vec{y}, \Vec{z}$)et les valeurs ($x, y, z$) qui peuvent avoir le même nom dans certain exercice.
+\end{remark}
+
 \begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
 	\centering % Horizontally center the figure on the page
 	\includegraphics[width=0.8\textwidth]{Images/cart2.png} % Include the figure image
@@ -336,6 +340,8 @@ Programmation d'une fraiseuse en coordonnées cartésiennes :
 	\label{cart3} % Unique label used for referencing the figure in-text
 \end{figure}
 
+En apprenant le vocabulaire de la programmation ISO, vous serez facilement programmer n'importe quelle trajectoire. Bien sur il faudra ajouter des notions programme que nous n'avons pas encore vue tels que les accélérations/ralentissement, correction de rayon etc.
+
 
 \subsection{Coordonnées polaires}
 Imaginez que vous deviez décrire la trajectoire,  vitesse ou accélération des aiguilles d'une montre. Cela devient vite difficile car si on prend un système de coordonnées cartésien, chaque seconde, quand l'une des aiguilles avance, ce sont deux coordonnées qui doivent être changées. 
@@ -350,7 +356,7 @@ Imaginez que vous deviez décrire la trajectoire,  vitesse ou accélération des
 Sur la figure [\ref{pol1}], en coordonnées cartésiennes, le bout de l'aiguille en $t_1$ a pour coordonnées ($x_1; y_1$) et pour $t_2$ ($x_2 ; y_2$) : les \textbf{deux} valeurs changent. 
 En coordonnées polaires, le bout de l'aiguille en $t_1$ a pour coordonnées ($r ; \theta_1$) et pour $t_2$ ($r ; \theta_2 $) : \textbf{Une} seule valeur est changée.
 
-Pour le cas général, les coordonnées polaires se représente comme sur la figure [\ref{pol2}]
+Pour le cas général, les coordonnées polaires se représentent comme sur la figure [\ref{pol2}]
 
 \begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
 	\centering % Horizontally center the figure on the page
@@ -420,6 +426,16 @@ Pour le cas général, les coordonnées polaires se représente comme sur la fig
 \end{Exercice}
 
 
+Programmation d'une fraiseuse en coordonnées cartésiennes :
+
+Le système de cordonnées (X, Y, Z) est un système cartésien de sens direct lié à une pièce placée sur la machine. Exemple : Sur une MOCN, on peut mettre manuellement en rotation la broche dans le sens direct en appuyant sur le bouton \textbf{C+} du pupitre de commande.
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=0.7\textwidth]{Images/pol.JPG} % Include the figure image
+	\caption{à  faire}
+	\label{pol4} % Unique label used for referencing the figure in-text
+\end{figure}
 
 
 
@@ -442,12 +458,7 @@ Ne seront pas traitée
 
 
 
-\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
-	\centering % Horizontally center the figure on the page
-	\includegraphics[width=0.7\textwidth]{Images/pol.JPG} % Include the figure image
-	\caption{Le système de cordonnées (X, Y, Z) est un système cartésien de sens direct lié à une pièce placée sur la machine. Exemple : Sur une MOCN, on peut mettre manuellement en rotation la broche dans le sens direct en appuyant sur le bouton \textbf{C+} du pupitre de commande.}
-	\label{pol4} % Unique label used for referencing the figure in-text
-\end{figure}
+
 
 
 
@@ -484,7 +495,7 @@ F_{y}\\
 F_{z}
 \end{Bmatrix}_{( \mathcal{B}_{1} ,\ \vec{x} ,\ \vec{y} ,\vec{z})}$};
 
-2D , 3D, certain sont constant $\overrightarrow{\mathcal{V}_{(train\rightarrow route)}} \ =\ C^{te}$ dautre nan $\overrightarrow{\mathcal{T}_{(train\rightarrow route)}} \ =\ X$ trajectoire
+2D , 3D, certain sont constant $\overrightarrow{\mathcal{V}_{(train\rightarrow route)}} \ =\ C^{te}$ d'autre non. $\overrightarrow{\mathcal{T}_{(train\rightarrow route)}} \ =\ X$ trajectoire
 
 
 
@@ -545,15 +556,13 @@ Z_{c} & 0
 
 \end{Extrait}
 
-\begin{Exercice}
-    dsfg
-\end{Exercice}
+
 
 
 
 
 \section{Position, vitesse et accélération}
-Mettre le sens physique
+%Mettre le sens physique
 \subsection{Vecteur trajectoire}
 
 \section{Forces}
