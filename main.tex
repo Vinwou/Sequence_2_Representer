@@ -425,20 +425,6 @@ Pour le cas général, les coordonnées polaires se représentent comme sur la f
     
 \end{Exercice}
 
-
-Programmation d'une fraiseuse en coordonnées cartésiennes :
-
-Le système de cordonnées (X, Y, Z) est un système cartésien de sens direct lié à une pièce placée sur la machine. Exemple : Sur une MOCN, on peut mettre manuellement en rotation la broche dans le sens direct en appuyant sur le bouton \textbf{C+} du pupitre de commande.
-
-\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
-	\centering % Horizontally center the figure on the page
-	\includegraphics[width=0.7\textwidth]{Images/pol.JPG} % Include the figure image
-	\caption{à  faire}
-	\label{pol4} % Unique label used for referencing the figure in-text
-\end{figure}
-
-
-
 \subsection{Coordonnées cylindriques}
 
 Les coordonnées cylindriques sont une extension des coordonnées polaires. On fait une succession d'une infinité de plans des coordonnées polaires pour remplir un cylindre. Comme pour les coordonnées polaires, les coordonnées cylindriques sont souvent utilisées lorsque le problème traité présente une symétrie de révolution autour d’un axe, avec lequel sera confondu l’un des vecteurs de la base. Pour étudier les mouvements sur un tour, c'est le système de coordonnées idéal.
@@ -451,6 +437,15 @@ Les coordonnées cylindriques sont une extension des coordonnées polaires. On f
 \end{figure}
 
 On cherche à connaître la distance $\Vec{OP}$ en coordonnées cylindriques. Par rapport au coordonnées polaires, il y a toujours $r$, et maintenant il faut ajouter la "hauteur" sur l'axe $\Vec{z}$. Ici, $r$ nous donne le rayon, donc la distance qui sépare le point que l'on étudie de l'axe de révolution, et la "longueur de hauteur". Avec cela, on peut déjà tracer des trajectoires parcourant un \textbf{brut de matière} et coder le tout dans une MOCN !
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1\textwidth]{Images/cyl2.png} % Include the figure image
+	\caption{Trajectoire d'outil pour une opération de chariotage/dressage sur un cylindre.}
+	\label{cyl2} % Unique label used for referencing the figure in-text
+\end{figure}
+
+
 
 
 \subsection{Coordonnées sphériques}
