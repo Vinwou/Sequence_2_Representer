@@ -329,7 +329,7 @@ Concrètement, c'est un système de coordonnées que vous manipulerez pour des �
 	\label{cart2} % Unique label used for referencing the figure in-text
 \end{figure}
 
-Programmation d'une fraiseuse en coordonnées cartésiennes :
+\subsection*{Programmation d'une trajectoire sur fraiseuse en coordonnées cartésiennes}
 
 
 
@@ -341,6 +341,30 @@ Programmation d'une fraiseuse en coordonnées cartésiennes :
 \end{figure}
 
 En apprenant le vocabulaire de la programmation ISO, vous serez facilement programmer n'importe quelle trajectoire. Bien sur il faudra ajouter des notions programme que nous n'avons pas encore vue tels que les accélérations/ralentissement, correction de rayon etc.
+
+
+\subsection*{Programmation d'une trajectoire sur tour en coordonnées cartésiennes}
+
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1\textwidth]{Images/cart4.png} % Include the figure image
+	\caption{Calcul des coordonnées cartésiennes à programmer pour un chariotage/dressage sur un tour.}
+	\label{cart4} % Unique label used for referencing the figure in-text
+\end{figure}
+
+\begin{remark}
+    Sur un tour, on pourrait s'attendre à choisir des coordonnées polaires ou cylindriques cependant, l'outil qui vient enlever la matière pour une pièce de révolution est toujours sur le même plan.
+
+    \begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1\textwidth]{Images/coord1.png} % Include the figure image
+\end{figure}
+
+Pour usiner une pièce de révolution sur un tour 2 axes, l'outil ne peut bouger que sur l'axe $\Vec{z}$ et s'approcher ou s'éloigner de celui-ci sur l'axe $\Vec{x}$\footnote{Il translate grâce à une liaison roue-vis sans fin, d'un moteur, et d'un codeur absolu pour repérer la position et la vitesse de translation.}
+
+
+\end{remark}
 
 
 \subsection{Coordonnées polaires}
@@ -436,16 +460,27 @@ Les coordonnées cylindriques sont une extension des coordonnées polaires. On f
 	\label{cyl1} % Unique label used for referencing the figure in-text
 \end{figure}
 
-On cherche à connaître la distance $\Vec{OP}$ en coordonnées cylindriques. Par rapport au coordonnées polaires, il y a toujours $r$, et maintenant il faut ajouter la "hauteur" sur l'axe $\Vec{z}$. Ici, $r$ nous donne le rayon, donc la distance qui sépare le point que l'on étudie de l'axe de révolution, et la "longueur de hauteur". Avec cela, on peut déjà tracer des trajectoires parcourant un \textbf{brut de matière} et coder le tout dans une MOCN !
+On cherche à connaître la distance $\Vec{OP}$ en coordonnées cylindriques. Par rapport au coordonnées polaires, il y a toujours $r$, et maintenant il faut ajouter la "hauteur" sur l'axe $\Vec{z}$. Ici, $r$ nous donne le rayon, et $z$ la "longueur".
+
 
 \begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
 	\centering % Horizontally center the figure on the page
-	\includegraphics[width=1\textwidth]{Images/cyl2.png} % Include the figure image
-	\caption{Trajectoire d'outil pour une opération de chariotage/dressage sur un cylindre.}
-	\label{cyl2} % Unique label used for referencing the figure in-text
+	\includegraphics[width=0.9\textwidth]{Images/cyl3.png} % Include the figure image
+	\caption{Représentation des coordonnées cylindriques.}
+	\label{cyl3} % Unique label used for referencing the figure in-text
 \end{figure}
 
-
+La distance $\Vec{OP}$ dépendra du diamètre $r$ et de la hauteur $z$ :\\
+\begin{center}
+$\Vec{OP}=r\Vec{e_r}+z\Vec{e_z}$
+\end{center}
+Le vecteur unitaire $\Vec{e_r}$ change de direction en fonction de l'angle $\theta$, plus besoin des coordonnées $x$ et $y$. \\
+\noindent On peut passer du système cylindrique au système cartésien :
+$\begin{cases}
+x=r.\cos( \theta )\\
+y=r.\sin( \theta )\\
+z=z
+\end{cases}$
 
 
 \subsection{Coordonnées sphériques}
