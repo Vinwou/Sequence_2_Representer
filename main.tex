@@ -552,7 +552,7 @@ Pour étudier le mouvement des outils et des pièces dans l'espace, nous avons l
 \begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
 	\centering % Horizontally center the figure on the page
 	\includegraphics[width=0.9\textwidth]{Images/coord10.png} % Include the figure image
-	\caption{Représentation des coordonnées cartésienne : résumé.}
+	\caption{Représentation des coordonnées cartésiennes : résumé.}
 	\label{coord10} % Unique label used for referencing the figure in-text
 \end{figure}
 
@@ -587,7 +587,7 @@ Nous allons apprendre à représenter les différents éléments incontournables
 
 
 
-\subsection{Notation vectorielle}
+\section{Vecteurs}
 Les systèmes de coordonnées sont construit grâce à notre bibliothèque de vecteurs. Pour représenter d'autres éléments, nous utiliserons encore des vecteurs. Ils nous permettent d'exprimer une direction et un sens par rapport à notre repère. Pour utiliser un vecteur, on met simplement une flèche au dessus de ce qu'on écrit, cela veut dire qu'il à plusieurs \textit{composantes}\footnote{Un vecteur inséré dans un repère à trois dimensions (trois axes) pourra être décomposé en trois valeurs : trois composantes.}.\\
 
 \begin{definition}\label{Vecteurs}
@@ -612,7 +612,7 @@ Exemple d'écriture de vecteur : \\
 $\overrightarrow{Vecteur}$ ;  $\overrightarrow{Vent}=\ \begin{Bmatrix} 10\\ 5 \\ -13 \end{Bmatrix} $ ; $\overrightarrow{W}$
 
 
-
+\subsection{Norme d'un vecteur}
 Pour noter la longueur d'un vecteur (sa norme) on écrit : $\Vert \overrightarrow{Vecteur}\Vert \ $
 
 Pour n'importe quel vecteur, on calcul sa norme grâce à ses composantes. Si $ \overrightarrow{u} = a \vec{x} + b \vec{y} + c \vec{z} \ $, la norme d'un vecteur est égale à :\\
@@ -626,7 +626,7 @@ $\Vert \overrightarrow{u}\Vert =\ \sqrt{a^2 + b^2 + c^2} $
 \end{figure}
 
 
-\begin{Exercice}
+\begin{Exercice}\index{Norme : exercice}
     Calculez la norme des vecteurs suivants :\\
     \begin{itemize}
         \item $\vec{u} =8\vec{x} +4\vec{y} + \vec{z}$
@@ -670,11 +670,77 @@ $\Vert \overrightarrow{u}\Vert =\ \sqrt{a^2 + b^2 + c^2} $
    
 \end{remark}
 
+\begin{Exercice}
 
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,150); %set diagram left start at 0, and has height of 150
+
+%Straight Lines [id:da5027549623980123] 
+\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=0.75]    (6.67,85.67) -- (155,85.67) (16.67,81.67) -- (16.67,89.67)(26.67,81.67) -- (26.67,89.67)(36.67,81.67) -- (36.67,89.67)(46.67,81.67) -- (46.67,89.67)(56.67,81.67) -- (56.67,89.67)(66.67,81.67) -- (66.67,89.67)(76.67,81.67) -- (76.67,89.67)(86.67,81.67) -- (86.67,89.67)(96.67,81.67) -- (96.67,89.67)(106.67,81.67) -- (106.67,89.67)(116.67,81.67) -- (116.67,89.67)(126.67,81.67) -- (126.67,89.67)(136.67,81.67) -- (136.67,89.67)(146.67,81.67) -- (146.67,89.67) ;
+%Straight Lines [id:da5533393080875992] 
+\draw [line width=1.5]    (57,62.67) -- (57,104.47) ;
+%Straight Lines [id:da46817975993610483] 
+\draw [line width=1.5]    (117,63.67) -- (117,105.47) ;
+%Shape: Rectangle [id:dp1686050170663289] 
+\draw   (183,35) -- (397,35) -- (397,138.48) -- (183,138.48) -- cycle ;
+
+% Text Node
+\draw (50.33,45) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,opacity=1 ] [align=left] {A};
+% Text Node
+\draw (111.33,46.33) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,opacity=1 ] [align=left] {B};
+% Text Node
+\draw (12.17,112.67) node [anchor=north west][inner sep=0.75pt]   [align=left] {0};
+% Text Node
+\draw (51,110.67) node [anchor=north west][inner sep=0.75pt]   [align=left] {5};
+% Text Node
+\draw (107,113.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {10};
+% Text Node
+\draw (157.5,74.9) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,opacity=1 ]  {$\vec{x}$};
+% Text Node
+\draw (177.5,7.83) node [anchor=north west][inner sep=0.75pt]   [align=left] {Distance entre A et B ?};
+% Text Node
+\draw (358.83,4.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle \overrightarrow{AB}$ ?};
+
+
+\end{tikzpicture}
+\end{Exercice}
+
+\subsection{Opérations vectorielles}
+\subsection*{Somme}
+Soit le vecteur $\Vec{u}$ obtenu par somme de deux vecteurs $\Vec{u_1}$ et $\Vec{u_2}$. \\
+$\Vec{u} = \Vec{u_1} + \Vec{u_2}$
+
+Pour calculer $\Vec{u}$ :
+\begin{itemize}
+    \item graphiquement, il faut mettre les vecteurs bout à bout ;
+    \item analytiquement, il suffit d’ajouter les composantes des vecteurs.
+\end{itemize}
+
+
+\subsection{Résumé vecteurs}
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1\textwidth]{Images/vec10.png} % Include the figure image
+	\caption{Former des vecteurs.}
+	\label{vec10} % Unique label used for referencing the figure in-text
+\end{figure}
+
+Attention, on ne prend pas les vecteurs dans n'importe quel sens.
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1\textwidth]{Images/vec11.png} % Include the figure image
+	\caption{Former des vecteurs (2).}
+	\label{vec11} % Unique label used for referencing the figure in-text
+\end{figure}
 
 
 \section{Vitesse et accélération}
-Nous savons nous servir des vecteurs pour représenter la position d'un point par rapport à un repère. Maintenant, nous allons voir 
+Nous savons nous servir des vecteurs pour représenter la position d'un point par rapport à un repère. Maintenant, nous allons voir le lien entre la position d'un point et sa vitesse.
 
 
 \subsection{Vecteur trajectoire}
