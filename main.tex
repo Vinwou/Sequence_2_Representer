@@ -109,7 +109,7 @@ En BTS CPRP, nous nous intéresseront au machines ayant des outils qui sont comm
 
 
 
-Les machines ne sont pas comme nous, sans aucune perception de leur environnement elles sont dans le noir. Et nous leur demandons d'usiner avec une grande précision. Si on veut la longueur maximum d'une pièce de 20,001 mm mais que la pièce sortie mesure 20,002 : elle sera à jeter... Tout cela avec des vitesses très lente ou très rapide (0,001 m/min à 130 m/min). \\
+Les machines ne sont pas comme nous, sans aucune perception de leur environnement elles sont dans le noir. Et nous leur demandons d'usiner avec une grande précision. Si on veut la longueur maximum d'une pièce de 20,001 mm mais que la pièce sortie mesure 20,002 : elle sera à jeter... Et on veut contrôler des vitesses très lentes ou très rapides (0,001 m/min à 130 m/min). \\
 
 
 
@@ -361,7 +361,7 @@ En apprenant le vocabulaire de la programmation ISO, vous serez facilement progr
 	\includegraphics[width=1\textwidth]{Images/coord1.png} % Include the figure image
 \end{figure}
 
-Pour usiner une pièce de révolution sur un tour 2 axes, l'outil ne peut bouger que sur l'axe $\Vec{z}$ et s'approcher ou s'éloigner de celui-ci sur l'axe $\Vec{x}$\footnote{Il translate grâce à une liaison roue-vis sans fin, d'un moteur, et d'un codeur absolu pour repérer la position et la vitesse de translation.}
+Pour usiner une pièce de révolution sur un tour 2 axes, l'outil ne peut bouger que sur l'axe $\Vec{z}$ et s'approcher ou s'éloigner de celui-ci sur l'axe $\Vec{x}$\footnote{Il translate grâce à une liaison roue-vis sans fin, d'un moteur, et d'un codeur absolu pour repérer la position et la vitesse de translation.} L'axe $\Vec{z}$ est lié à la longueur de la pièce, on y contrôle la vitesse d'avance ($V_f$\footnote{f pour forward ?}) et la longueur qu'on veut enlever au brut. L'axe $\Vec{x}$ est lié au diamètre de la pièce, on y contrôle plusieurs éléments important comme la profondeur de passe ($A_p$), la vitesse de coupe ($V_c$) ou plus généralement la forme de la pièce.
 
 
 \end{remark}
@@ -483,13 +483,12 @@ z=z
 \end{cases}$
 
 
-\subsection{Coordonnées sphériques}
-Ne seront pas traitée
 
 
 
+\section{Conclusion}
 
-
+Pour étudier le mouvement des outils et des pièces dans l'espace, nous avons le choix du système de coordonnée. En fonction du besoin (forme, trajectoire, symétries) dépendra le système de coordonnée choisi. La plupart du temps, vous travaillerez avec le système de coordonnées cartésien. 
 
 
 %----------------------------------------------------------------------------------------
@@ -504,6 +503,17 @@ Ne seront pas traitée
 \chapter{Représenter le réel}
 
 \section{Introduction}
+Nous savons maintenant exprimer la position de points dans l'espace. Cela nous permets de programmer une succession de point pour avoir une trajectoire d'outil par exemple. Aussi, pour le bon usinage d'une pièce, il est essentiel de connaître d'autres indicateurs comme la vitesse d'outil ou de la pièce, les accélérations et les actions mécaniques (efforts, forces, etc.) générées dans la machine.
+
+\begin{figure}[H]  % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+ \fbox{
+	\includegraphics[width=0.9\textwidth]{Images/reel1.png} } % Include the figure image
+\end{figure}
+
+Vous vous en doutez, il est indispensable de connaître les efforts engendrés par l'outil pour s'assurer un enlèvement de copeaux ni trop brutal ni trop faible. On doit toujours garder à l'esprit que la machine ne fera que ce qu'on lui demande. On peu facilement casser l'outil ou la pièce et même rendre la machine totalement hors service.
+
+Nous allons apprendre à représenter les différents éléments incontournables pour les sciences de l'ingénieur et notamment pour la conception préliminaire.
 
 
 
@@ -511,15 +521,66 @@ Ne seront pas traitée
 
 
 
+\subsection{Notation vectorielle}
+Les systèmes de coordonnées sont construit grâce à notre bibliothèque de vecteurs. Pour représenter d'autres éléments, nous utiliserons encore des vecteurs. Ils nous permettent d'exprimer une direction et un sens par rapport à notre repère. Pour utiliser un vecteur, on met simplement une flèche au dessus de ce qu'on écrit, cela veut dire qu'il à plusieurs \textit{composantes}\footnote{Un vecteur inséré dans un repère à trois dimensions (trois axes) pourra être décomposé en trois valeurs : trois composantes.}.\\
+
+\begin{definition}\label{Vecteurs}
+    Un vecteur $\Vec{u}$ est défini par :
+    \begin{itemize}
+        \item Une direction ;
+        \item Un sens ;
+        \item Une longueur (sa norme).
+    \end{itemize}
+Un vecteur est indépendant du point d’origine.
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=0.9\textwidth]{Images/reel2.png} % Include the figure image
+	\caption{Représentation d'un vecteur.}
+	\label{vecteur} % Unique label used for referencing the figure in-text
+\end{figure}
+
+\end{definition}
+
+Exemple d'écriture de vecteur : \\
+$\overrightarrow{Vecteur}$ ;  $\overrightarrow{Vent}=\ \begin{Bmatrix} 10\\ 5 \\ -13 \end{Bmatrix} $ ; $\overrightarrow{W}$
 
 
-%Pas parler de physique, rester math . un peu de math, vecteur exprime globalement tout avec une fleche ou un type de fleche (double fleche pour les moments)
-\subsection{Notations}
-vecteur (F ou M ou T ou V ou $\Vec{a}$ ou P), torseurs
-\subsection{Vecteurs}\label{Vecteurs}
 
+Pour noter la longueur d'un vecteur (sa norme) on écrit : $\Vert \overrightarrow{Vecteur}\Vert \ $
+
+Pour n'importe quel vecteur, on calcul sa norme grâce à ses composantes. Si $ \overrightarrow{u} = a \vec{x} + b \vec{y} + c \vec{z} \ $, la norme d'un vecteur est égale à :\\
+$\Vert \overrightarrow{u}\Vert =\ \sqrt{a^2 + b^2 + c^2} $
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=0.6\textwidth]{Images/norme3.png} % Include the figure image
+	\caption{Calcul de la norme d'un vecteur.}
+	\label{norme3} % Unique label used for referencing the figure in-text
+\end{figure}
+
+
+\begin{Exercice}
+    Calculez la norme des vecteurs suivants :\\
+    \begin{itemize}
+        \item $\vec{u} =8\vec{x} +4\vec{y} + \vec{z}$
+        \item $\overrightarrow{w} =-\vec{x} +6\vec{y} - 2\vec{z}$
+        \item $\overrightarrow{OP} = \vec{v} + \vec{w} $ 
+    \end{itemize}
+\end{Exercice}
+
+
+
+
+
+
+\section{Vitesse et accélération}
+%Mettre le sens physique
+\subsection{Vecteur trajectoire}
+
+\section{Forces}
 On écrivait comme ça,  $\Vec{i}=\ \begin{Bmatrix} a\\ b \\ c \end{Bmatrix} $  maintenant faut écrire comme ça 
- {$\mathcal{F}_{moteur} =\ \begin{Bmatrix}
+ {$\overrightarrow{\mathcal{F}_{moteur}} =\ \begin{Bmatrix}
 F_{x}\\
 F_{y}\\
 F_{z}
@@ -527,10 +588,18 @@ F_{z}
 
 2D , 3D, certain sont constant $\overrightarrow{\mathcal{V}_{(train\rightarrow route)}} \ =\ C^{te}$ d'autre non. $\overrightarrow{\mathcal{T}_{(train\rightarrow route)}} \ =\ X$ trajectoire
 
+\section{Moments / Couples}
+ (double fleche pour les moments) 
 
 
-\subsection{Torseurs}
-video science clic ?
+
+
+
+
+\subsection{Notation de Torseurs}
+
+
+Pour aller plus loin sur les tenseurs : \url{https://www.youtube.com/watch?v=zPRbbM4KJBY&t=1066s}
 
 \begin{Extrait}\index{Torseurs (exercice)}
 TS CPRP 2015 \\
@@ -589,16 +658,7 @@ Z_{c} & 0
 
 
 
-
-
-\section{Position, vitesse et accélération}
-%Mettre le sens physique
-\subsection{Vecteur trajectoire}
-
-\section{Forces}
-
-\section{Moments / Couples}
-
+ 
 \section{Notations}
 
 \begin{definition}\index{Solide indéformable}
