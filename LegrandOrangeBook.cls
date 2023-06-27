@@ -46,7 +46,8 @@
 
 \usepackage{etoolbox} % Required for conditional logic and easily changing commands
 
-	
+
+ 
 \usepackage{pdfpages} %pour les pdf
 
 
