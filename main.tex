@@ -909,7 +909,7 @@ Attention, on ne prend pas les vecteurs dans n'importe quel sens.
 \end{figure}
 
 
-\section{Vitesse et accélération}
+\section{Vitesse d'un point}
 Les vecteurs pourront être utile pour représenter la vitesse ou accélération des outils ou tout autre élément des MOCN. Un éléments incontournable en usinage est la vitesse d'avance de l'outil : $\mathcal{V}_f$. Incontournable car elle dépend du type d'opération effectuée, de l'outil, de l'état de surface souhaité, etc. Elle représente aussi la vitesse de table par rapport à la vitesse de pénétration. On a pour habitude de l'exprimer en millimètre pour une minute ($mm/min$).
 
 \begin{figure}[H]  % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
@@ -920,6 +920,27 @@ Les vecteurs pourront être utile pour représenter la vitesse ou accélération
 \end{figure}
 
 Remarquez qu'en science de l'ingénieur, le simple nom du vecteur $\mathcal{V}_f$ ne suffira plus pour exprimer une vitesse. Lors des études, nous aurons beaucoup de vecteurs représentants différents éléments, le choix du nom est très important. Ici nous voulons que le vecteur choisi traduise la phrase : "Ceci représente la vitesse du point P qui lui même appartient à l'outil, et qui se déplace par rapport à notre repère, donc à la pièce". Heureusement on traduit cette phrase par $\overrightarrow{\mathcal{V}f_{p \in outil / piece}}$. Les étudiants peuvent avoir du mal à faire le lien entre l'écriture mathématique et le lien physique, pourtant ces notations seront \textbf{toujours} utilisées que ce soit en exercice ou l'examen du BTS. Pour s'entraîner traduisez ces notations dans votre tête dès que vous en voyez une.
+
+\subsection{Notation}
+
+Nous avons vu qu'un point s'exprime dans un repère. Le vecteur position définissant la position du point P d'un outil dans un repère $\mathcal{R}_0$ est noté $\overrightarrow{OP}$ et est défini tel que : $\overrightarrow{OP} = X_p \vec{x}_0 + Y_p \vec{y}_0 + Z_p \vec{z}_0$.
+
+De la même manière on décrira la vitesse d'un point P par rapport à un repère $\mathcal{R}_0$ comme : \\
+
+\fbox{ $\overrightarrow{\mathcal{V}_{p \in outil / 0}} = V_{Xp} .\vec{x}_0 + V_{Yp} .\vec{y}_0 + V_{Zp} .\vec{z}_0$ } . En effet, un outil qui se déplace dans une MOCN quelconque aura trois composantes sur trois axes. \\
+
+On peut aussi noté le vecteur vitesse en colonne :
+\fbox{
+$\overrightarrow{\mathcal{V}_{p \in outil / 0}} =\begin{bmatrix}
+V_{xp}\\
+V_{yp}\\
+V_{zp}
+\end{bmatrix}_{(\vec{x}_0 ,\ \vec{y}_0 ,\ \vec{z}_0)}$ }
+
+
+\subsection*{Note sur la trajectoire}
+La trajectoire du point P dans $\mathcal{R}_0$ est l’ensemble de ses positions au cours de son mouvement. La
+\textbf{vitesse} d’un point est toujours \textbf{tangente} à sa trajectoire.
 
 
 \section{Forces}
