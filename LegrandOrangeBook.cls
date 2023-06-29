@@ -46,7 +46,7 @@
 
 \usepackage{etoolbox} % Required for conditional logic and easily changing commands
 
-
+\usepackage {wrapfig} %pour les figures collées au texte
  
 \usepackage{pdfpages} %pour les pdf
 

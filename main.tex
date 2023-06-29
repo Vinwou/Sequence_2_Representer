@@ -535,7 +535,7 @@ $\Vec{OP}=r\Vec{e_r}+z\Vec{e_z}$
 \end{center}
 Le vecteur unitaire $\Vec{e_r}$ change de direction en fonction de l'angle $\theta$, plus besoin des coordonnées $x$ et $y$. \\
 \noindent On peut passer du système cylindrique au système cartésien. Sur la figure [\ref{cyl3}], la longueur $x$ représente le côté adjacent de l'angle $\mathcal{\theta}$, et \textcolor[rgb]{0.82,0.01,0.11}{r} représente le l'hypoténuse du triangle $x, y, r$. Avec les formules trigonométrique on obtient 
-$\cos(\textcolor[rgb]{0.29,0.56,0.89}{\theta }) =\frac{adjacent}{\textcolor[rgb]{0.82,0.01,0.11}{hypothenuse}} =\frac{x}{\textcolor[rgb]{0.82,0.01,0.11}{r}} \ \rightleftarrows x=\cos(\textcolor[rgb]{0.29,0.56,0.89}{\theta }) .\textcolor[rgb]{0.82,0.01,0.11}{r}$. Vous pouvez essayer avec la longueur \textcolor[rgb]{0.96,0.65,0.14}{y}. La longueur \textcolor[rgb]{0.56,0.07,1}{z} en revanche reste la même quand coordonnées cartésiennes. Au final le triplet est le suivant :   \\
+$\cos(\textcolor[rgb]{0.29,0.56,0.89}{\theta }) =\frac{adjacent}{\textcolor[rgb]{0.82,0.01,0.11}{hypothenuse}} =\frac{x}{\textcolor[rgb]{0.82,0.01,0.11}{r}} \ \rightleftarrows x=\cos(\textcolor[rgb]{0.29,0.56,0.89}{\theta }) .\textcolor[rgb]{0.82,0.01,0.11}{r}$. Vous pouvez essayer avec la longueur \textcolor[rgb]{0.96,0.65,0.14}{y}. La longueur \textcolor[rgb]{0.56,0.07,1}{z} en revanche reste la même que pour les coordonnées cartésiennes. Au final le triplet est le suivant :   \\
 
 \begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
 	\includegraphics[width=0.4\textwidth]{Images/coordc.png} % Include the figure image
@@ -618,7 +618,39 @@ Exemple d'écriture de vecteur : \\
 $\overrightarrow{Vecteur}$ ;  $\overrightarrow{Vent}=\ \begin{Bmatrix} 10\\ 5 \\ -13 \end{Bmatrix} $ ; $\overrightarrow{W}$
 
 
-\subsection{Norme d'un vecteur}
+\subsection{Notation}
+Soit un vecteur $\Vec{u}$ dans un repère orthonormé direct.
+
+
+\begin{wrapfigure}{l}{0.25\textwidth} %this figure will be at the left
+    \centering
+    \includegraphics[width=0.25\textwidth]{Images/not1.png}
+\end{wrapfigure}
+
+On note les vecteurs de deux façons. \\
+
+
+\textbf{Horizontalement :} \\
+
+
+$\Vec{u}= u_x \Vec{x} + u_y \Vec{y} + u_z \Vec{z} $
+
+Ici trois valeurs scalaires. Sur un repère à deux, nous n'aurions eu que deux valeurs. \\
+
+\textbf{Verticalement :} \\
+
+$\vec{u} =\begin{bmatrix}
+u_{x}\\
+u_{y}\\
+u_{z}
+\end{bmatrix}_{(\vec{x} ,\ \vec{y} ,\ \vec{z})}$
+
+
+
+
+
+
+\subsection{Norme d'un vecteur}\index{Norme : vecteurs}
 Pour noter la longueur d'un vecteur (sa norme) on écrit : $\Vert \overrightarrow{Vecteur}\Vert \ $
 
 Pour n'importe quel vecteur, on calcul sa norme grâce à ses composantes. Si $ \overrightarrow{u} = a \vec{x} + b \vec{y} + c \vec{z} \ $, la norme d'un vecteur est égale à :\\
@@ -782,9 +814,80 @@ Les vecteurs seront la plupart du temps utilisés pour décrire des \textbf{acti
 
 
 
+\subsection{Composantes d'un vecteur}\index{Composantes : vecteur}
+
+
+\begin{theorem}
+Lorsqu’on place un vecteur dans un plan cartésien, on peut reporter sa longueur sur les différents axes du repères. Les nouvelles longueurs que l'on voit sur les axes du repère son ses \textbf{composantes}. Un vecteur projeté sur un repère à deux axes aura deux composantes, trois si c'est un repère à trois axes, etc.
+\end{theorem}
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1\textwidth]{Images/compo1.png} % Include the figure image
+	\caption{Représentation des composantes d'une vecteur.}
+	\label{compo1} % Unique label used for referencing the figure in-text
+\end{figure}
+
+
+\subsection{Produit scalaire}
+
+Le produit scalaire du vecteur $\Vec{u}_1$ avec le vecteur $\Vec{u}_2$ noté $\Vec{u}_1 \centerdot \Vec{u}_2$ est égal au produit des normes des 2
+vecteurs multiplié par le cosinus de l’angle $\theta$ entre les deux directions, quel que soit le sens pris pour l’angle.
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=0.5\textwidth]{Images/sca1.png} % Include the figure image
+\end{figure}
+On a $\theta = (\Vec{u}_1, \Vec{u}_2)$ un angle orienté.
+\begin{definition}\index{Produit scalaire : définition}
+    Le produit scalaire de deux vecteurs est noté avec un point : $\Vec{u}_1 \centerdot \Vec{u}_2$ \\
+    et il est égale à : $\Vec{u}_1 \centerdot \Vec{u}_2 = \Vert \Vec{u}_1 \Vert \times \Vert \Vec{u}_2 \Vert \times \cos ( \widehat{\Vec{u}_1, \Vec{u}_2 } )$
+    
+\end{definition}
+
+Il peut être noté : \\
+$\Vec{u}_1 \centerdot \Vec{u}_2 = \vert \Vec{u}_1 \Vec{u}_2 \vert \cos(\theta)$
+
+Un produit scalaire est un nombre réel. C'est un nombre qui n'est pas un vecteur.
+
+\begin{theorem}
+    Dans les exercices, il arrivera souvent qu'on vous demande de vérifier que deux vecteurs sont perpendiculaires. Or, sur le cercle trigonométrique le cosinus d'un angle de $\frac{\pi}{2}$ (donc perpendiculaire) est égale à 0. \\
+    Finalement, si $\Vec{u}_1 \perp \Vec{u}_2$ on a : \\
+    $\Vec{u}_1 \centerdot \Vec{u}_2= \vert \Vec{u}_1 \Vec{u}_2 \vert \cos(\frac{\pi}{2}) = \Vert \Vec{u}_1 \Vert \times \Vert \Vec{u}_2 \Vert \times 0 = 0 $
+\end{theorem}
+
+Dans les repères qu'on utilise, on peut aussi effectuer le produit scalaire des vecteurs entre eux.
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1\textwidth]{Images/sca2.png} % Include the figure image
+\end{figure}
+
+Pour éviter les erreurs de signes avec l'angle entre les deux vecteurs, on peut retenir une formule plus complète.
+Si deux vecteur $\Vec{u}_1$ et $\Vec{u}_2$ sont portés par deux vecteurs unitaires $\Vec{x}_1$ et $\Vec{x}_2$, pour éviter de se demander si l'angle est positif ou négatif on peut retenir que : \\
+$\Vec{u}_1 \centerdot \Vec{u}_2 = u_1 \Vec{x}_1 \centerdot u_2 \Vec{x}_2 =  u_1 u_2 \centerdot \Vec{x}_1 \Vec{x}_2 = u_1 u_2 \Vert \Vec{x}_1 \Vert \Vert \Vec{x}_2 \Vert \cos ( \widehat{\Vec{x}_1, \Vec{x}_2} ) $
+
+Ainsi, il n’y a ni valeurs absolues, ni discussion sur l’angle.
 
 
 
+
+\subsection{Produit vectoriel}
+Le produit vectoriel de deux vecteurs sera fréquemment utilisé dans les exercices et à l'examen. On peut le présenter sous deux formes. La première ressemble beaucoup au produit scalaire, mais attention, le \textbf{produit vectoriel} donnera un \textbf{vecteur} avec plusieurs composantes, alors que le \textit{produit scalaire} nous donne \textit{un seul nombre} qui n'est pas un vecteur.
+
+\begin{definition}
+    Soit deux vecteurs $\vec{u}$ et $\Vec{v}$ dans un repère orthonormé direct, le produit vectoriel noté "$\land$" donnera un nouveau vecteur $\vec{w}$ \\
+    $\vec{u} \land \vec{v} = \vec{w} = \Vert \vec{u} \Vert . \Vert \vec{v} \Vert . \sin ( \widehat{\Vec{u}, \Vec{v}} )$
+\end{definition}
+
+Un produit vectoriel est donc un vecteur, dont la direction est orthogonale à $\vec{u}$ et à $\Vec{v}$. \\
+
+L'autre façon d'exprimer un produit vectoriel est verticale. Nous aurons l'occasion de faire plusieurs exercice pour nous habituer à se genre de calcul car il est incontournable pour le BTS.
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1\textwidth]{Images/vecto1.png} % Include the figure image
+\end{figure}
 
 
 \subsection{Résumé vecteurs}
@@ -807,10 +910,17 @@ Attention, on ne prend pas les vecteurs dans n'importe quel sens.
 
 
 \section{Vitesse et accélération}
-Nous savons nous servir des vecteurs pour représenter la position d'un point par rapport à un repère. Maintenant, nous allons voir le lien entre la position d'un point et sa vitesse.
+Les vecteurs pourront être utile pour représenter la vitesse ou accélération des outils ou tout autre élément des MOCN. Un éléments incontournable en usinage est la vitesse d'avance de l'outil : $\mathcal{V}_f$. Incontournable car elle dépend du type d'opération effectuée, de l'outil, de l'état de surface souhaité, etc. Elle représente aussi la vitesse de table par rapport à la vitesse de pénétration. On a pour habitude de l'exprimer en millimètre pour une minute ($mm/min$).
 
+\begin{figure}[H]  % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1\textwidth]{Images/vit1.png} % Include the figure image
+    \caption{Représentation de la vitesse d'avance ($\mathcal{V}_f$)}
+	\label{vet1} % Unique label used for referencing the figure in-text
+\end{figure}
 
-\subsection{Vecteur trajectoire}
+Remarquez qu'en science de l'ingénieur, le simple nom du vecteur $\mathcal{V}_f$ ne suffira plus pour exprimer une vitesse. Lors des études, nous aurons beaucoup de vecteurs représentants différents éléments, le choix du nom est très important. Ici nous voulons que le vecteur choisi traduise la phrase : "Ceci représente la vitesse du point P qui lui même appartient à l'outil, et qui se déplace par rapport à notre repère, donc à la pièce". Heureusement on traduit cette phrase par $\overrightarrow{\mathcal{V}f_{p \in outil / piece}}$. Les étudiants peuvent avoir du mal à faire le lien entre l'écriture mathématique et le lien physique, pourtant ces notations seront \textbf{toujours} utilisées que ce soit en exercice ou l'examen du BTS. Pour s'entraîner traduisez ces notations dans votre tête dès que vous en voyez une.
+
 
 \section{Forces}
 On écrivait comme ça,  $\Vec{i}=\ \begin{Bmatrix} a\\ b \\ c \end{Bmatrix} $  maintenant faut écrire comme ça 
