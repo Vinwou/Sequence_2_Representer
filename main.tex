@@ -147,7 +147,7 @@ La $\mathcal{B}ase$, c'est le tableau Excel infini, où sont présents tous les 
 
 
 Un repère $\mathcal{R}$ est la donnée d’un point d'origine $\mathcal{O}$ et d’une base $\mathcal{B}$, permettant de repérer tous points de
-l’espace par rapport à $\mathcal{O}$ (l'origine du repère). On décide que $\mathcal{O}$ est notre origine, on choisi deux vecteurs dans notre bibliothèque (sauf s'il sont égaux), on prend l'origine des deux vecteurs et on le colle sur notre point $\mathcal{O}$. Voilà, le repère est fait. \\
+l’espace par rapport à $\mathcal{O}$ (l'origine du repère). On décide que $\mathcal{O}$ est notre origine, on choisi deux vecteurs dans notre bibliothèque (sauf s'ils sont égaux), on prend l'origine des deux vecteurs et on le colle sur notre point $\mathcal{O}$. Voilà, le repère est fait. \\
 
 \begin{remark}
     En pratique, nous n'avons pas besoin de dire si un vecteur ou un repère est en 2 ou 3 dimensions. Un vecteur en 2 dimensions possède 2 données $\Vec{i}=\ \begin{Bmatrix} a\\ b \end{Bmatrix} $, il en possédera trois, pour la dimension trois : $\Vec{i}=\ \begin{Bmatrix} a\\ b \\ c \end{Bmatrix} $. De même, un repère en deux dimensions s'écriera $\mathcal{R}(0, \Vec{x}, \Vec{y})$, tandis-qu'un repère à trois dimensions s'écriera $\mathcal{R}(0, \Vec{x}, \Vec{y}, \Vec{z})$.    
@@ -746,6 +746,39 @@ $\Vert \overrightarrow{u}\Vert =\ \sqrt{a^2 + b^2 + c^2} $
 \end{tikzpicture}
 \end{Exercice}
 
+
+
+
+
+
+
+\subsection{Composantes d'un vecteur}\index{Composantes : vecteur}
+
+
+\begin{theorem}
+Lorsqu’on place un vecteur dans un plan cartésien, on peut reporter sa longueur sur les différents axes du repères. Les nouvelles longueurs que l'on voit sur les axes du repère son ses \textbf{composantes}. Un vecteur projeté sur un repère à deux axes aura deux composantes, trois si c'est un repère à trois axes, etc.
+\end{theorem}
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1\textwidth]{Images/compo1.png} % Include the figure image
+	\caption{Représentation des composantes d'une vecteur.}
+	\label{compo1} % Unique label used for referencing the figure in-text
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection{Opérations vectorielles}
 \subsection*{Somme}
 Soit le vecteur $\Vec{u}$ obtenu par somme de deux vecteurs $\Vec{u_1}$ et $\Vec{u_2}$. \\
@@ -763,70 +796,6 @@ Pour calculer $\Vec{u}$ :
 Deux vecteurs $\Vec{u}$ et $\Vec{v}$ sont \textbf{co}linéaire s'il ont la même direction. Si deux vecteur sont portés par le même axe, ils sont colinéaires. 
 
 
-\subsection{Représentation par un vecteur}
-
-Les vecteurs seront la plupart du temps utilisés pour décrire des \textbf{actions mécaniques} qui nous permettent d'effectuer des calculs sur les systèmes voulus, dans l'objectif de dimensionner, prédire le réel. Même dans les calculs on s'autorise une tolérance précisée dans le cahier des charges. 
-
-
-\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
-	\centering % Horizontally center the figure on the page
-
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-
-\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-%uncomment if require: \path (0,164); %set diagram left start at 0, and has height of 164
-
-%Shape: Rectangle [id:dp44451801855060147] 
-\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=0.1 ] (3.5,78) -- (402,78) -- (402,159.78) -- (3.5,159.78) -- cycle ;
-
-% Text Node
-\draw    (126,49) -- (268,49) -- (268,74) -- (126,74) -- cycle  ;
-\draw (129,53) node [anchor=north west][inner sep=0.75pt]   [align=left] {Actions mécaniques};
-% Text Node
-\draw    (36.5,84.25) -- (103.5,84.25) -- (103.5,109.25) -- (36.5,109.25) -- cycle  ;
-\draw (39.5,88.25) node [anchor=north west][inner sep=0.75pt]   [align=left] {Contacts};
-% Text Node
-\draw    (288.5,84.25) -- (362.5,84.25) -- (362.5,109.25) -- (288.5,109.25) -- cycle  ;
-\draw (291.5,88.25) node [anchor=north west][inner sep=0.75pt]   [align=left] {Distances};
-% Text Node
-\draw (26.5,115.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {Pneus - Route};
-% Text Node
-\draw (8.5,136.25) node [anchor=north west][inner sep=0.75pt]   [align=left] {Ecrou - Clé à molette};
-% Text Node
-\draw (281,115.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {Deux aimants};
-% Text Node
-\draw (265,136.25) node [anchor=north west][inner sep=0.75pt]   [align=left] {Gravité - humains};
-% Text Node
-\draw (322.5,5) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize] [align=left] {{\fontfamily{pcr}\selectfont Provoquer}\\{\fontfamily{pcr}\selectfont Modifier}\\{\fontfamily{pcr}\selectfont Arrêter}\\{\fontfamily{pcr}\selectfont Déformer}};
-% Text Node
-\draw (270.5,30) node [anchor=north west][inner sep=0.75pt]   [align=left] {sert à};
-% Text Node
-\draw (387,30) node [anchor=north west][inner sep=0.75pt]   [align=left] {le mouvement d'un système};
-
-
-\end{tikzpicture}
-
-
-
-	\caption{Si le système est une pièce à usiner, on pourrait considérer l'action mécanique d'un forêt sur celle-ci.}
-	\label{AM1} % Unique label used for referencing the figure in-text
-\end{figure}
-
-
-
-\subsection{Composantes d'un vecteur}\index{Composantes : vecteur}
-
-
-\begin{theorem}
-Lorsqu’on place un vecteur dans un plan cartésien, on peut reporter sa longueur sur les différents axes du repères. Les nouvelles longueurs que l'on voit sur les axes du repère son ses \textbf{composantes}. Un vecteur projeté sur un repère à deux axes aura deux composantes, trois si c'est un repère à trois axes, etc.
-\end{theorem}
-
-\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
-	\centering % Horizontally center the figure on the page
-	\includegraphics[width=1\textwidth]{Images/compo1.png} % Include the figure image
-	\caption{Représentation des composantes d'une vecteur.}
-	\label{compo1} % Unique label used for referencing the figure in-text
-\end{figure}
 
 
 \subsection{Produit scalaire}
@@ -890,6 +859,24 @@ L'autre façon d'exprimer un produit vectoriel est verticale. Nous aurons l'occa
 \end{figure}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection{Résumé vecteurs}
 
 \begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
@@ -927,11 +914,11 @@ Nous avons vu qu'un point s'exprime dans un repère. Le vecteur position défini
 
 De la même manière on décrira la vitesse d'un point P par rapport à un repère $\mathcal{R}_0$ comme : \\
 
-\fbox{ $\overrightarrow{\mathcal{V}_{p \in outil / 0}} = V_{Xp} .\vec{x}_0 + V_{Yp} .\vec{y}_0 + V_{Zp} .\vec{z}_0$ } . En effet, un outil qui se déplace dans une MOCN quelconque aura trois composantes sur trois axes. \\
+\fbox{ $\overrightarrow{\mathcal{V}_{p \in outil / MOCN}} = V_{Xp} .\vec{x}_0 + V_{Yp} .\vec{y}_0 + V_{Zp} .\vec{z}_0$ } . En effet, un outil qui se déplace dans une MOCN quelconque aura trois composantes sur trois axes. \\
 
 On peut aussi noté le vecteur vitesse en colonne :
 \fbox{
-$\overrightarrow{\mathcal{V}_{p \in outil / 0}} =\begin{bmatrix}
+$\overrightarrow{\mathcal{V}_{p \in outil / MOCN}} =\begin{bmatrix}
 V_{xp}\\
 V_{yp}\\
 V_{zp}
@@ -950,7 +937,89 @@ L’accélération du point P dans une base $\mathcal{B}_0$ est notée $\Gamma_{
 
 
 
-\section{Forces}
+
+
+\section{Représentation des Actions Mécaniques (AM) par les vecteurs}
+
+Les vecteurs seront la plupart du temps utilisés pour décrire des \textbf{actions mécaniques} qui nous permettent d'effectuer des calculs sur les systèmes voulus, dans l'objectif de dimensionner, prédire le réel. Même dans les calculs on s'autorise une tolérance précisée dans le cahier des charges. \\
+
+Une action mécanique, souvent appelée "force", est un phénomène qui a la capacité de déformer un corps ou de changer sa vitesse ou sa trajectoire dans un référentiel Galiléen.\\
+
+On distingue trois grands types d’actions :
+\begin{itemize}
+    \item Les actions volumiques à distance (gravité, forces électromagnétiques);
+    \item Les actions surfaciques de contact (contact réel entre deux solides ou un solide et un fluide)
+    \item Les actions linéiques et ponctuelles (modèle d’un contact réel entre deux solides)
+\end{itemize}
+
+
+
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,164); %set diagram left start at 0, and has height of 164
+
+%Shape: Rectangle [id:dp44451801855060147] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=0.1 ] (3.5,78) -- (402,78) -- (402,159.78) -- (3.5,159.78) -- cycle ;
+
+% Text Node
+\draw    (126,49) -- (268,49) -- (268,74) -- (126,74) -- cycle  ;
+\draw (129,53) node [anchor=north west][inner sep=0.75pt]   [align=left] {Actions mécaniques};
+% Text Node
+\draw    (36.5,84.25) -- (103.5,84.25) -- (103.5,109.25) -- (36.5,109.25) -- cycle  ;
+\draw (39.5,88.25) node [anchor=north west][inner sep=0.75pt]   [align=left] {Contacts};
+% Text Node
+\draw    (288.5,84.25) -- (362.5,84.25) -- (362.5,109.25) -- (288.5,109.25) -- cycle  ;
+\draw (291.5,88.25) node [anchor=north west][inner sep=0.75pt]   [align=left] {Distances};
+% Text Node
+\draw (26.5,115.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {Pneus - Route};
+% Text Node
+\draw (8.5,136.25) node [anchor=north west][inner sep=0.75pt]   [align=left] {Ecrou - Clé à molette};
+% Text Node
+\draw (281,115.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {Deux aimants};
+% Text Node
+\draw (265,136.25) node [anchor=north west][inner sep=0.75pt]   [align=left] {Gravité - humains};
+% Text Node
+\draw (322.5,5) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize] [align=left] {{\fontfamily{pcr}\selectfont Provoquer}\\{\fontfamily{pcr}\selectfont Modifier}\\{\fontfamily{pcr}\selectfont Arrêter}\\{\fontfamily{pcr}\selectfont Déformer}};
+% Text Node
+\draw (270.5,30) node [anchor=north west][inner sep=0.75pt]   [align=left] {sert à};
+% Text Node
+\draw (387,30) node [anchor=north west][inner sep=0.75pt]   [align=left] {le mouvement d'un système};
+
+
+\end{tikzpicture}
+
+
+
+	\caption{Si le système est une pièce à usiner, on pourrait considérer l'action mécanique d'un forêt sur celle-ci.}
+	\label{AM1} % Unique label used for referencing the figure in-text
+\end{figure}
+
+
+\begin{theorem}
+    Une action mécanique est la donnée de deux éléments :
+    \begin{itemize}
+        \item Une force;
+        \item Un moment.
+    \end{itemize}
+Elle s’applique sur un corps, que ce soit sur son volume V, sa surface S, une ligne ou en un point.
+\end{theorem}
+
+
+
+
+
+
+
+\subsection{Forces}
+Une action mécanique est composée d’une \textbf{force} représentée par un vecteur (direction, sens, longueur) exprimée en \textbf{Newton}\footnote{Le Newton (symbole : N) est l'unité de mesure de la force nommée ainsi en l'honneur d'Isaac Newton pour ses travaux en mécanique classique. Il équivaut à un kilogramme par mètre carré (1 kg/m2).} (N). \\
+On appelle \textbf{résultante} d’une force, la force \textit{totale} générée par l’ensemble des forces sur le volume, la surface ou la ligne considérés.
+
+
 On écrivait comme ça,  $\Vec{i}=\ \begin{Bmatrix} a\\ b \\ c \end{Bmatrix} $  maintenant faut écrire comme ça 
  {$\overrightarrow{\mathcal{F}_{moteur}} =\ \begin{Bmatrix}
 F_{x}\\
@@ -960,7 +1029,7 @@ F_{z}
 
 2D , 3D, certain sont constant $\overrightarrow{\mathcal{V}_{(train\rightarrow route)}} \ =\ C^{te}$ d'autre non. $\overrightarrow{\mathcal{T}_{(train\rightarrow route)}} \ =\ X$ trajectoire
 
-\section{Moments / Couples}
+\subsection{Moments / Couples}
  (double fleche pour les moments) 
 
 
