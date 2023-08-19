@@ -574,6 +574,10 @@ Pour étudier le mouvement des outils et des pièces dans l'espace, nous avons l
 %------------------------------------------------
 \chapter{Représenter le réel}
 
+\begin{corollary}
+S3.4 – Modélisation des actions mécaniques
+\end{corollary}
+
 \section{Introduction}
 Nous savons maintenant exprimer la position de points dans l'espace. Cela nous permets de programmer une succession de point pour avoir une trajectoire d'outil par exemple. Aussi, pour le bon usinage d'une pièce, il est essentiel de connaître d'autres indicateurs comme la vitesse d'outil ou de la pièce, les accélérations et les actions mécaniques (efforts, forces, etc.) générées dans la machine.
 
@@ -817,7 +821,7 @@ On a $\theta = (\Vec{u}_1, \Vec{u}_2)$ un angle orienté.
 Il peut être noté : \\
 $\Vec{u}_1 \centerdot \Vec{u}_2 = \vert \Vec{u}_1 \Vec{u}_2 \vert \cos(\theta)$
 
-Un produit scalaire est un nombre réel. C'est un nombre qui n'est pas un vecteur.
+Un produit scalaire est un nombre réel. Un nombre n'est pas un vecteur.
 
 \begin{theorem}
     Dans les exercices, il arrivera souvent qu'on vous demande de vérifier que deux vecteurs sont perpendiculaires. Or, sur le cercle trigonométrique le cosinus d'un angle de $\frac{\pi}{2}$ (donc perpendiculaire) est égale à 0. \\
@@ -841,7 +845,7 @@ Ainsi, il n’y a ni valeurs absolues, ni discussion sur l’angle.
 
 
 
-\subsection{Produit vectoriel}
+\subsection{Produit vectoriel}\index{Produit vectoriel}\label{Produit vectoriel}
 Le produit vectoriel de deux vecteurs sera fréquemment utilisé dans les exercices et à l'examen. On peut le présenter sous deux formes. La première ressemble beaucoup au produit scalaire, mais attention, le \textbf{produit vectoriel} donnera un \textbf{vecteur} avec plusieurs composantes, alors que le \textit{produit scalaire} nous donne \textit{un seul nombre} qui n'est pas un vecteur.
 
 \begin{definition}
@@ -849,7 +853,7 @@ Le produit vectoriel de deux vecteurs sera fréquemment utilisé dans les exerci
     $\vec{u} \land \vec{v} = \vec{w} = \Vert \vec{u} \Vert . \Vert \vec{v} \Vert . \sin ( \widehat{\Vec{u}, \Vec{v}} )$
 \end{definition}
 
-Un produit vectoriel est donc un vecteur, dont la direction est orthogonale à $\vec{u}$ et à $\Vec{v}$. \\
+Un produit vectoriel est donc un vecteur $\vec{w}$, dont la direction est orthogonale à $\vec{u}$ et à $\Vec{v}$. \\
 
 L'autre façon d'exprimer un produit vectoriel est verticale. Nous aurons l'occasion de faire plusieurs exercice pour nous habituer à se genre de calcul car il est incontournable pour le BTS.
 
@@ -933,7 +937,7 @@ La trajectoire du point P dans $\mathcal{R}_0$ est l’ensemble de ses positions
 \section{Accélération d'un point}
 La notion d'accélération doit être comprise même si en pratique, les calculs d'accélérations sont peu, voir non présents dans l'examen du BTS. 
 
-L’accélération du point P dans une base $\mathcal{B}_0$ est notée $\Gamma_{(P/0)}$.
+L’accélération du point P dans une base $\mathcal{B}_0$ est notée par la lettre grec Gamma majuscule, $\Gamma_{(P/0)}$.
 
 
 
@@ -1016,26 +1020,105 @@ Elle s’applique sur un corps, que ce soit sur son volume V, sa surface S, une 
 
 
 \subsection{Forces}
+Une force ponctuelle est une force "simple", qui est le résultat :
+\begin{itemize}
+    \item Soit d’un modèle de contact entre deux solides indéformables ;
+    \item Soit d’une simplification d’une force linéique, surfacique ou volumique pour traiter un modèle
+simplifié dans lequel on fait apparaître de simples forces plutôt que leur répartition
+\end{itemize}
+
 Une action mécanique est composée d’une \textbf{force} représentée par un vecteur (direction, sens, longueur) exprimée en \textbf{Newton}\footnote{Le Newton (symbole : N) est l'unité de mesure de la force nommée ainsi en l'honneur d'Isaac Newton pour ses travaux en mécanique classique. Il équivaut à un kilogramme par mètre carré (1 kg/m2).} (N). \\
 On appelle \textbf{résultante} d’une force, la force \textit{totale} générée par l’ensemble des forces sur le volume, la surface ou la ligne considérés.
 
 
-On écrivait comme ça,  $\Vec{i}=\ \begin{Bmatrix} a\\ b \\ c \end{Bmatrix} $  maintenant faut écrire comme ça 
+D'un point de vue mathématique, on écrivait un vecteur comme suit : $\Vec{i}=\ \begin{Bmatrix} a\\ b \\ c \end{Bmatrix} $  maintenant, nous concrétisons cette notation pour être plus précis. Il conviendra de noter les forces (toujours avec des vecteurs) comme suit : 
  {$\overrightarrow{\mathcal{F}_{moteur}} =\ \begin{Bmatrix}
 F_{x}\\
 F_{y}\\
 F_{z}
 \end{Bmatrix}_{( \mathcal{B}_{1} ,\ \vec{x} ,\ \vec{y} ,\vec{z})}$};
 
-2D , 3D, certain sont constant $\overrightarrow{\mathcal{V}_{(train\rightarrow route)}} \ =\ C^{te}$ d'autre non. $\overrightarrow{\mathcal{T}_{(train\rightarrow route)}} \ =\ X$ trajectoire
+On traduit : La Force du moteur possède trois composantes, dirigées respectivement sur les vecteurs $\Vec{x}$, $\Vec{y}$, $\Vec{z}$ dans un base nommée $\mathcal{B}_{1}$.
+
+
+\begin{figure}[H]  % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1\textwidth]{Images/Force1.png} % Include the figure image
+    \caption{Représentation de deux forces}
+	\label{Force1} % Unique label used for referencing the figure in-text
+\end{figure}
+
 
 \subsection{Moments / Couples}
- (double fleche pour les moments) 
+Lorsqu’une force s’applique sur un \textbf{solide}, le point d’application de cette force induit un effet différent sur la pièce sollicitée, un effet qui est proportionnel à une distance, qui tend à \textit{faire tourner} la pièce sollicitée et qui dépend du lieu où s’applique cette force et de sa direction. On parle souvent d’\textit{effet levier}. La grandeur qui caractérise cet effet est le \textbf{moment}.
+Un moment est une grandeur exprimée en Newton mètre (N.m). C’est le produit d’une force par une distance.
+Prenons l’exemple d’un bâton sous l’action de deux masses égales à une distance différentes du centre A.
+
+\begin{figure}[H]  % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1\textwidth]{Images/Moment1.png} % Include the figure image
+    \caption{Représentation de }
+	\label{Moment1} % Unique label used for referencing the figure in-text
+\end{figure}
 
 
+Si on fait l'expérience, le bâton tombera vers la gauche. L’origine du basculement est une différence de moment des deux forces $F_1$ et $F_1$. L’action en A s’oppose toujours au poids des deux forces et ne change pas de valeur, mais il existe une \textit{force en rotation}, appelée \textbf{moment}, qui tend à faire basculer l’ensemble vers la gauche.
+
+Graphiquement, on représente en général les moments par des doubles flèches même si cela n'est pas toujours le cas.\\
+
+\noindent L'écriture d'un moment qui \textit{ouvre} une porte quand on la pousse peut s'écrire :\\
+\begin{itemize}
+
+\item $\overrightarrow{\mathcal{M}_{O}{}_{\left( main\rightarrow porte\right)}}$ 
+\noindent On lit : Moment au point $O$ de la main sur la porte.
+
+\item $\overrightarrow{\mathcal{M}_{O}{(F)}}$
+\noindent On lit : Moment au point $O$ de la force $F$.
+
+\end{itemize}
+\subsection*{Calculs avec des moments}
 
 
+\noindent \begin{minipage}{0.5\textwidth}
+\vspace{1cm}
+\includegraphics[width=0.6\textwidth]{Images/Moment2.png}
+\label{Moment2}
+\end{minipage}
+\hspace{0.05\textwidth}
+\begin{minipage}{0.4\textwidth}
 
+\begin{theorem}\index{Varignon (formule) - BABAR}
+On peut calculer simplement le moment d’une force en un point quelconque de l’espace à l’aide d’un
+produit vectoriel\footnote{voir chap. \ref{Produit vectoriel}} : $\overrightarrow{\mathcal{M}_{O}{}_{\left( main\rightarrow porte\right)}}=\overrightarrow{OA} \land \Vec{F} $. \\
+
+Un incontournable du BTS CPRP est de savoir calculer le moment d'une force $F$ sachant le moment en un autre point : 
+
+$\overrightarrow{\mathcal{M}_{B}{(F)}}= \overrightarrow{\mathcal{M}_{A}{(F)}} + \overrightarrow{BA} \land \Vec{F}$
+
+On retient souvent cette formule par le mot \textbf{BABAR}. C'est la formule de \textbf{Varignon}, à connaître par coeur.
+\end{theorem}
+\end{minipage}
+
+
+\begin{Exercice}
+    Calculez le moment en $O$ de la force F du dessin ci-dessus, sachant que $\overrightarrow{OA}=\ \begin{Bmatrix} 3\\ 2 \end{Bmatrix}_{\vec{x} ,\ \vec{y}}$ et que $\Vec{F}=\begin{Bmatrix} -2\\ -4 \end{Bmatrix}_{\vec{x} ,\ \vec{y}}$N.m \\
+
+Sachant le moment en $O$ de la force $\Vec{F}$, calculez le moment en un point $B$ de la force $\Vec{F}$, où $\overrightarrow{FO}=\ \begin{Bmatrix} -3\\ 1 \end{Bmatrix}_{\vec{x} ,\ \vec{y}}$
+
+\end{Exercice}
+
+
+\begin{Exercice}
+    
+
+\begin{figure}[H]  % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+ \fbox{
+	\includegraphics[width=0.9\textwidth]{Images/treuil1.png} } % Include the figure image
+\end{figure}
+
+
+\end{Exercice}
 
 \subsection{Notation de Torseurs}
 
@@ -1050,7 +1133,8 @@ On se propose d’estimer l’effort maxi que doit appliquer la contre-pointe su
 
 \noindent \begin{minipage}{0.5\textwidth}
 \vspace{1cm}
-\includegraphics[width=1\textwidth]{Images/2015.JPG}
+ \fbox{
+\includegraphics[width=1\textwidth]{Images/2015.JPG} }
 \label{fig:nature}
 \end{minipage}
 \hspace{0.05\textwidth}
