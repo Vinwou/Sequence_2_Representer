@@ -50,6 +50,8 @@
  
 \usepackage{pdfpages} %pour les pdf
 
+\usepackage{eurosym}
+
 
 
 \usepackage[french]{babel} % Pour les quotes og fg 

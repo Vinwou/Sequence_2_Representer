@@ -774,11 +774,35 @@ Lorsqu’on place un vecteur dans un plan cartésien, on peut reporter sa longue
 
 
 
+\subsection{Résultante}
 
 
 
 
 
+
+\noindent \begin{minipage}{0.4\textwidth}
+\vspace{1cm}
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=0.8\textwidth]{Images/result1.png} % Include the figure image
+\end{figure}
+
+\end{minipage}
+\hspace{0.05\textwidth}
+\begin{minipage}{0.5\textwidth}
+
+Le vecteur ou la force résultante, est la somme vectorielle de toutes les forces que subit un corps. Tout comme les autres forces, la force résultante possède une grandeur et une orientation. Elle peut aussi être définie comme étant la force globale agissant sur un objet, quand toutes les forces agissant sur celui-ci sont ajoutées. A part lorsqu'une seule force agit sur un objet, la force résultante ne correspond pas à une force "réelle" mais nous permet de faciliter les calculs.
+
+\end{minipage}
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1\textwidth]{Images/result2.png} % Include the figure image
+\end{figure}
+
+La notion de résultante des forces nous servira pour le chapitre sur les torseurs.
 
 
 
@@ -1057,7 +1081,7 @@ Prenons l’exemple d’un bâton sous l’action de deux masses égales à une 
 \begin{figure}[H]  % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
 	\centering % Horizontally center the figure on the page
 	\includegraphics[width=1\textwidth]{Images/Moment1.png} % Include the figure image
-    \caption{Représentation de }
+    \caption{Moment engendré par les bras de leviers différents.}
 	\label{Moment1} % Unique label used for referencing the figure in-text
 \end{figure}
 
@@ -1076,7 +1100,7 @@ Graphiquement, on représente en général les moments par des doubles flèches 
 \noindent On lit : Moment au point $O$ de la force $F$.
 
 \end{itemize}
-\subsection*{Calculs avec des moments}
+\subsection{Calculs avec des moments}
 
 
 \noindent \begin{minipage}{0.5\textwidth}
@@ -1103,13 +1127,14 @@ On retient souvent cette formule par le mot \textbf{BABAR}. C'est la formule de 
 \begin{Exercice}
     Calculez le moment en $O$ de la force F du dessin ci-dessus, sachant que $\overrightarrow{OA}=\ \begin{Bmatrix} 3\\ 2 \end{Bmatrix}_{\vec{x} ,\ \vec{y}}$ et que $\Vec{F}=\begin{Bmatrix} -2\\ -4 \end{Bmatrix}_{\vec{x} ,\ \vec{y}}$N.m \\
 
-Sachant le moment en $O$ de la force $\Vec{F}$, calculez le moment en un point $B$ de la force $\Vec{F}$, où $\overrightarrow{FO}=\ \begin{Bmatrix} -3\\ 1 \end{Bmatrix}_{\vec{x} ,\ \vec{y}}$
+Sachant le moment en $O$ de la force $\Vec{F}$, calculez le moment en un point $B$ de la force $\Vec{F}$, où $\overrightarrow{BO}=\ \begin{Bmatrix} -3\\ 1 \end{Bmatrix}_{\vec{x} ,\ \vec{y}}$
 
 \end{Exercice}
 
 
-\begin{Exercice}
-    
+
+\begin{Exercice}\label{treuil2}
+Dans un but d'améliorer l'ergonomie, un treuil simple à tambour actionné par un moteur monophasé de 230V est envisager dans l'atelier du lycée pour monter certaines pièces lourdes sur les plateaux d'usinage. Pour un treuil soulevant jusqu'à 500 kg, on trouve des prix d'environ 400\euro.
 
 \begin{figure}[H]  % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
 	\centering % Horizontally center the figure on the page
@@ -1117,13 +1142,90 @@ Sachant le moment en $O$ de la force $\Vec{F}$, calculez le moment en un point $
 	\includegraphics[width=0.9\textwidth]{Images/treuil1.png} } % Include the figure image
 \end{figure}
 
+Pour notre atelier, on voudrait soulever des pièces de 200kg maximum (c'est déjà beaucoup). Notre tambour à un rayon $r=10$ cm et la distance entre le milieu et l'extrémité est $l=3$ m.\\
+
+\textbf{Question :} En utilisant les deux formules vues plus haut, quels seront les moments en $C$ puis en $O$ ?\\
+
 
 \end{Exercice}
 
+
+\subsection{Équiprojectivité des champ des moments}
+
+
+\begin{figure}[H]  % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=0.9\textwidth]{Images/equi1.png} % Include the figure image
+    \caption{Bilan desau point C.}
+	\label{equi1} % Unique label used for referencing the figure in-text
+\end{figure}
+
+
 \subsection{Notation de Torseurs}
+Nous avons vu sur l'exemple du treuil qu'il est intéressant d'avoir les informations des forces appliquées (la barre ne doit pas fléchir) et des moments (la barre ne doit pas se tordre). Nous avons aussi admis qu'une \textbf{action mécanique} contient deux informations, une force et un moment sur un certain volume.\\
+En science de l'ingénieur, il existe une notation pour parler d'une action mécanique, écrire ses éléments, et expliquer sur quoi elle s'applique. Nous utilisons les \textbf{torseurs}.
 
 
-Pour aller plus loin sur les tenseurs : \url{https://www.youtube.com/watch?v=zPRbbM4KJBY&t=1066s}
+\begin{figure}[H]  % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1\textwidth]{Images/treuil3.png} % Include the figure image
+    \caption{Bilan des actions mécaniques qui s'applique sur la pièce (0) au point C.}
+	\label{treuil3} % Unique label used for referencing the figure in-text
+\end{figure}
+
+Un torseur quelconque s'écrit en général par la lettre $\mathcal{T}$ comme torseur. Mais nous verrons des torseurs très communs, si bien qu'on les nomme toujours par la même lettre (ex. torseur cinématique très souvent noté $\mathcal{V}$).\\
+
+Nous pouvons écrire le torseur (fig. \ref{treuil3}) des actions mécaniques de la pièce (1) : le tambour, sur la pièce (0) : la barre, en un point choisi, disons $C$. Il devra indiquer : les forces, les moments, le point d'application et la base dans laquelle nous nous trouvons. 
+
+\begin{figure}[H]\index{Torseurs : notation}  % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1.15\textwidth]{Images/treuil4.png} % Include the figure image
+    \caption{Écriture du torseur des actions mécanique de (1) sur (0), au point C.}
+	\label{treuil4} % Unique label used for referencing the figure in-text
+\end{figure}
+
+\begin{Exercice}
+    Écrire le torseur des actions mécaniques de la pièce (1) sur la pièce (0) au point $O$ avec les données numériques que vous avez trouvé dans l'exercice \ref{treuil2}.
+\end{Exercice}
+
+
+Le torseur des actions mécaniques de (1) sur (0) nous indique, pour un point donné, l'état des forces et des moments, ce qui nous sera très utile pour connaître les efforts d'outil sur les pièces à usiner. De plus, comme nous connaissons la formule pour déplacer le moment d'une force en n'importe quel point, nous pouvons connaître le torseur partout où nous le souhaitons. En simulation numérique, la formules de Varignon est très utile, une fois entrée dans les logiciels, l'ordinateur peut calculer la répartition des forces et moments partout sur un système si on lui donne les premières informations. Beaucoup de métier découle des formules de sciences de l'ingénieur et vous pouvez aussi vous lancer dans une carrière info-mécanique, mécatronique.\\
+
+Extrait d'une thèse sur la simulation avec la formule de Varignon.
+"\textit{le champ des moments d’un torseur est défini en tout point de l’espace, ce champ est équiprojectif, les deux champs sont reliés par la relation de Varignon. Ainsi les petits déplacements sont calculables en tout point."} \\
+\begin{figure}[H]  % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+    \fbox{
+	\includegraphics[width=0.55\textwidth]{Images/var1.JPG} % Include the figure image
+    \includegraphics[width=0.55\textwidth]{Images/var2.JPG } % Include the figure image
+     }
+    \caption{Crédit : ÉCOLE DOCTORALE centrale nantes. MECANIQUE, THERMIQUE ET GENIE CIVIL. Modélisation et quantification tridimensionnelles des écarts de fabrication pour la simulation d’usinage. STEPHANE TICHADOU 2016.}
+	\label{var12} % Unique label used for referencing the figure in-text
+\end{figure}
+
+\subsection{Torseurs particuliers}
+
+
+
+\subsubsection{Torseurs glisseurs}
+\begin{figure}[H]  % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1\textwidth]{Images/gliss1.png} % Include the figure image
+    \caption{Écriture du torseur des actions mécanique de (1) sur (0), au point C.}
+	\label{gliss1} % Unique label used for referencing the figure in-text
+\end{figure}
+
+
+
+\subsubsection{Torseurs couples}
+\begin{figure}[H]  % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+	\includegraphics[width=1\textwidth]{Images/couple1.png} % Include the figure image
+    \caption{Écriture du torseur des actions mécanique de (1) sur (0), au point C.}
+	\label{couple1} % Unique label used for referencing the figure in-text
+\end{figure}
+
+Pour aller plus loin sur les \textit{tenseurs} et en parler lors du cours : \url{https://www.youtube.com/watch?v=zPRbbM4KJBY&t=1066s}
 
 \begin{Extrait}\index{Torseurs (exercice)}
 TS CPRP 2015 \\
@@ -1237,6 +1339,13 @@ aze
 
 \newpage
 \section{ANNEXE}
+
+\subsection*{Solution exercice \ref{treuil2} }
+\begin{figure}[H]  % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+	\centering % Horizontally center the figure on the page
+ \fbox{
+	\includegraphics[width=1\textwidth]{Images/treuil2.png} } % Include the figure image
+\end{figure}
 
 
 \phantomsection
